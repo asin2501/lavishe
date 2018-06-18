@@ -1,0 +1,50 @@
+.bottom-footer {
+    border-top: 1px solid $gray;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 12px;
+    color: $grayLight;
+
+    @include breakpoint(small){
+        text-align: center;
+    }
+}
+
+.bottom-footer__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint(medium){
+        padding-left:30px;
+    }
+    
+    @include breakpoint(small){
+        display: block;
+        padding-left:0;
+    }
+    
+}
+
+.bottom-menu {
+    display: flex;
+
+    @include breakpoint(small){
+        justify-content:center;
+        margin-bottom:10px;
+        margin-top:10px;
+    }
+}
+
+.bottom-menu__item + .bottom-menu__item {
+    margin-left: 35px;
+}
+
+.bottom-menu__link {
+    color: $grayLight;
+
+    transition: color 300ms;
+    &:hover {
+        color: $pink;
+    }
+}

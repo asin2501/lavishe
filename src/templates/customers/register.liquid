@@ -1,0 +1,46 @@
+<div class="container-fluid login">
+    <div class="login__card">
+        {% form 'create_customer' %}
+        <div class="login__header">
+            <h2 class="login__title">{{ 'customer.register.title' | t }}</h2>
+        </div>
+        {{ form.errors | default_errors }}
+        <div class="login__col">
+            <input type="text"
+                   name="customer[first_name]"
+                   id="FirstName"
+                   placeholder="{{ 'customer.register.first_name' | t }}"
+                   autofocus
+                   class="input"
+                   {% if form.first_name %}value="{{ form.first_name }}"{% endif %}>
+        </div>
+        <div class="login__col">
+            <input type="text"
+                   name="customer[last_name]"
+                   id="LastName"
+                   placeholder="{{ 'customer.register.last_name' | t }}"
+                   class="input"
+                   {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+        </div>
+        <div class="login__col">
+            <input type="email"
+                   name="customer[email]"
+                   id="Email"
+                   class="{% if form.errors contains 'email' %}input--error{% endif %} input"
+                   placeholder="{{ 'customer.register.email' | t }}"
+                   value="{% if form.email %}{{ form.email }}{% endif %}"
+                   spellcheck="false"
+                   autocomplete="off"
+                   autocapitalize="off">
+        </div>
+        <div class="login__col">
+            <input type="password"
+                   name="customer[password]"
+                   id="CreatePassword"
+                   class="{% if form.errors contains 'password' %}input--error{% endif %} input"
+                   placeholder="{{ 'customer.register.password' | t }}">
+        </div>
+        <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn btn--full">
+        {% endform %}
+    </div>
+</div>

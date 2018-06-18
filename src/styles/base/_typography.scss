@@ -1,0 +1,58 @@
+//typography: base styles for fonts, p, a, standard h1, h2 ...
+
+body{
+    font-size:14px;
+    font-family: $font;
+    color: $dark;
+}
+
+
+h1, h2, h3, h4, h6, p {
+    margin: 0;
+}
+
+a{
+    color: $grayLight;
+    transition: color 200ms;
+
+    &:hover{
+        color: $pink;
+    }
+}
+
+h2{
+    font-size:48px;
+    text-transform: uppercase;
+    letter-spacing:1.5px;
+
+    @include breakpoint(extra-small){
+        letter-spacing:0;
+        font-size:28px;
+    }
+    @include breakpoint(mobile-landscape){
+        font-size:20px;
+    }
+}
+
+h3{
+    text-transform: uppercase;
+    font-size:21px;
+}
+h4{
+    font-size:20px;
+    @include breakpoint(medium){
+        font-size:14px;
+    }
+}
+
+h5{
+    margin-top:0;
+    font-size:14px;
+    text-transform: uppercase;
+    margin-bottom:17px;
+}
+
+.subtitle{
+    color: $grayLight;
+}
+

@@ -1,0 +1,26 @@
+.mobile-submenu{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $gray;
+    padding-top:15px;
+    padding-bottom:15px;
+    align-items:flex-start;
+    align-content: flex-start;
+}
+
+.mobile-submenu__item{
+    width:50%;
+}
+
+.mobile-submenu__link{
+    color: #fff;
+}
+
+.mobile-submenu__item{
+    padding-left:20px;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+

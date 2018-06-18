@@ -1,0 +1,25 @@
+.footer{
+    background-color: $dark;
+    color: #fff;
+}
+
+.footer__right{
+    padding-top:95px;
+
+    @include breakpoint(medium){
+        padding-left:30px;
+    }
+    @include breakpoint(small){
+        padding-top:5px;
+        text-align: center;
+        padding-left:10px;
+    }
+}
+
+.footer-menu-col__inner{
+    @include breakpoint(extra-small){
+        max-width: 340px;
+        margin: 0 auto;
+        text-align: left;
+    }
+}

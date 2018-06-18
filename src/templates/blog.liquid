@@ -1,0 +1,44 @@
+<div class="style-feed">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <h2 class="style-feed__title">{{ blog.title }}</h2>
+                <p class="style-feed__subtitle subtitle">Style advice, shopping tips and outfit inspiration.</p>
+                <div class="row style-feed__top-widget">
+                    <div class="col-lg-8">
+                        {% include 'top-article', _article: blog.articles[0], _additional_class:'top-article--big' %}
+                    </div>
+                    <div class="col-lg-4">
+                        {% include 'top-article', _article: blog.articles[1] %}
+                        {% include 'top-article', _article: blog.articles[2] %}
+                    </div>
+                </div>
+                <script>
+                    var blogArticles = {{ blog.articles | json }};
+                </script>
+                <div id="articles-list">
+                    <transition-group class="row style-feed__articles-list" name="list">
+                        <div class="col-lg-4 col-sm-6 list-item" v-for="(article, key) in articles" v-if="(key) < showed" :key="article.id">
+                            <article class="article">
+                                <div class="article__img" :style="{'background-image': 'url(' + article.image.src + ')'}"></div>
+                                <div class="article__footer">
+                                    <h3 class="article__title">{% raw %}{{ article.title }}{% endraw %}</h3>
+                                    <div class="article__content">{% raw %}{{ article.body_html }}{% endraw %}</div>
+                                    <footer class="article__footer-bottom">
+                                        <div class="article__date">
+                                            {% raw %}{{ article.formatedDate }}{% endraw %}
+                                        </div>
+                                        <a :href="'{{ blog.url }}/' + article.handle" class="article__url read-more">{{ 'blogs.article.read_more' | t }}</a>
+                                    </footer>
+                                </div>
+                            </article>
+                        </div>
+                    </transition-group>
+                    <div class="style-feed__btn-row" v-if="articles.length > showed">
+                        <button class="transparent-btn transparent-btn--black" @click="showMore">{{ 'custom.load_more' | t }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

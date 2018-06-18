@@ -1,0 +1,276 @@
+<header class="header">
+    <div class="promo-ribbon">
+        <div class="container-fluid">
+            <div class="row justify-content-center ">
+                <div class="col-xl-10">
+                    <div class="row justify-content-around">
+                        {% if section.settings.ribbon_item_1 %}
+                            <div class="promo-ribbon__item">
+                                {{ section.settings.ribbon_item_2 }}
+                            </div>
+                        {% endif %}
+                        {% if section.settings.ribbon_item_2 %}
+                            <div class="promo-ribbon__item">
+                                {{ section.settings.ribbon_item_2 }}
+                            </div>
+                        {% endif %}
+                        {% if section.settings.ribbon_item_3 %}
+                            <div class="promo-ribbon__item">
+                                {{ section.settings.ribbon_item_3 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-header">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="row justify-content-between">
+                        <nav class="main-header__col col-auto">
+                            <a href="/" class="logo main-header__logo">
+                                {% if section.settings.logo %}
+                                    <img src="{{ section.settings.logo | img_url:'master' }}" alt="" class="logo__img">
+                                {% else %}
+                                    {% include 'logo' %}
+                                {% endif %}
+                            </a>
+                            <ul class="main-header__main-menu main-menu">
+                                <li class="main-menu__item {% if template != 'page.girls' %}main-menu__item--active{% endif %}">
+                                    <a class="main-menu__link js-header-link" href="{{ section.settings.main_link_url_1 }}">{{ section.settings.main_link_1 }}</a>
+                                </li>
+                                <li class="main-menu__item {% if template == 'page.girls' %}main-menu__item--active{% endif %}">
+                                    <a class="main-menu__link js-header-link" href="{{ section.settings.main_link_url_2 }}">{{ section.settings.main_link_2 }}</a>
+                                </li>
+                            </ul>
+                            <ul class="main-header__additional-menu additional-menu">
+                                {% for link in linklists[section.settings.additional_linklist].links %}
+                                    <li class="additional-menu__item">
+                                        <a href="{{ link.url }}" class="additional-menu__link">{{ link.title }}</a>
+                                    </li>
+                                {% endfor %}
+                                <li class="additional-menu__item">
+                                    <a href="#" class="additional-menu__link inspiration-link" id="inspiration-link">Inspiration</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="main-header__col col-auto">
+                            <form class="search-form main-header__search-form" action="/search">
+                                <input type="text" name="q" placeholder="{{ section.settings.search_placeholder }}" class="search-input">
+                                <button type="submit" class="search-form__search-icon">{% include 'icon-search' %}</button>
+                            </form>
+                            <a href="#" class="header-icon header-icon--mobile-only header-icon--search" id="search-btn">
+                                {% include 'icon-search' %}
+                            </a>
+                            <a href="/account" class="header-icon">
+                                {% include 'user-icon' %}
+                            </a>
+                            <a href="/cart" class="header-icon header-icon--cart">
+                                {% include 'shopping-bag-icon' %}
+                                <span class="header-icon__label">{{ cart.item_count }}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inspiration" id="inspiration-header-section">
+            <div class="inspiration__list">
+                <div class="container-fluid">
+                    <div class="row justify-content-center ">
+                        <div class="col-xl-10">
+                            <ul class="row">
+                                {% for block in section.blocks %}
+                                    <li class="col-4">
+                                        <a class="inspiration__item" href="{{ block.settings.url }}" style="background-image:url({{ block.settings.img | img_url:'600x' }});">
+                                            <span class="inspiration__title">{{ block.settings.title }}</span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="submenu-wrapper {% if template == 'page.girls' %}submenu-wrapper__pushed{% endif %}" id="submenu-wrapper">
+        <div class="submenu-wrapper__inner">
+            <ul class="submenu">
+                {% for link in linklists[section.settings.submenu1].links %}
+                    <li class="submenu__item">
+                        <a href="{{ link.url }}" class="submenu__link">{{ link.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <ul class="submenu">
+                {% for link in linklists[section.settings.submenu2].links %}
+                    <li class="submenu__item">
+                        <a href="{{ link.url }}" class="submenu__link">{{ link.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="search-popup" id="search-form">
+    <div class="search-popup__inner">
+        <form class="search-popup__form" action="/search">
+            <input type="text" name="q" placeholder="{{ section.settings.search_placeholder }}" class="search-popup__input">
+            <button type="submit" class="search-popup__search-icon">{% include 'icon-search' %}</button>
+        </form>
+        <div class="search-popup__close js-close-search">{% include 'cancel-music-icon' %}</div>
+    </div>
+</div>
+
+<div class="mobile-menu">
+    <div class="mobile-menu__close" id="mobmenutoggler">
+        <div class="menu-btn">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+        <ul class="mobile-menu__tabs mobile-menu-tabs">
+            <li class="mobile-menu-tabs__item {% if template != 'page.girls' %}mobile-menu-tabs__item--active{% endif %}">
+                <a class="mobile-menu-tabs__link  js-mobile-tab" href="{{ section.settings.main_link_url_1 }}">{{ section.settings.main_link_1 }}</a>
+            </li>
+            <li class="mobile-menu-tabs__item {% if template == 'page.girls' %}mobile-menu-tabs__item--active{% endif %}">
+                <a class="mobile-menu-tabs__link js-mobile-tab" href="{{ section.settings.main_link_url_2 }}">{{ section.settings.main_link_2 }}</a>
+            </li>
+        </ul>
+    <div class="mobile-menu__scroll">
+
+        <div class="mobile-menu__submenu-wrapper {% if template == 'page.girls' %}mobile-menu__submenu-wrapper--pushed{% endif %}" id="tabs-wrapper">
+            <div class="mobile-menu__submenu-wrapper-inner">
+                <ul class="mobile-submenu">
+                    {% for link in linklists[section.settings.submenu1].links %}
+                        <li class="mobile-submenu__item">
+                            <a href="{{ link.url }}" class="mobile-submenu__link">{{ link.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <ul class="mobile-submenu">
+                    {% for link in linklists[section.settings.submenu2].links %}
+                        <li class="mobile-submenu__item">
+                            <a href="{{ link.url }}" class="mobile-submenu__link">{{ link.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <ul class="mobile-additional-menu">
+            {% for link in linklists[section.settings.submenu2].links %}
+                <li class="mobile-additional-menu__item">
+                    <a href="{{ link.url }}" class="mobile-additional-menu__link">{{ link.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="image-links">
+            {% for block in section.blocks %}
+                <a class="image-links__item" href="{{ block.settings.url }}" style="background-image:url({{ block.settings.img | img_url:'600x'}});">
+                    <span class="image-links__title">{{ block.settings.title }}</span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "link_list",
+        "id": "additional_linklist",
+        "label": "Additional Link List"
+      },
+        {
+            "type": "text",
+            "id": "main_link_1",
+            "label": "Main Link 1 Title",
+            "default": "Women"
+        },
+        {
+            "type": "url",
+            "id": "main_link_url_1",
+            "label": "Main Link 1 Url"
+        },
+        {
+            "type": "link_list",
+            "id": "submenu1",
+            "label": "Submenu for Link 1"
+        },
+        {
+            "type": "text",
+            "id": "main_link_2",
+            "label": "Main Link 2 Title",
+            "default": "Girls"
+        },
+        {
+            "type": "url",
+            "id": "main_link_url_2",
+            "label": "Main Link 2 Url"
+        },
+        {
+            "type": "link_list",
+            "id": "submenu2",
+            "label": "Submenu for Link 2"
+        },
+        {
+            "type": "text",
+            "id": "search_placeholder",
+            "label": "Search Placeholder",
+            "default": "Search Out Store..."
+        },
+        {
+            "type":"header",
+            "content":   "Top Ribbon Itwms"
+        },
+        {
+            "type": "text",
+            "id": "ribbon_item_1",
+            "label": "Promo Text 1",
+            "default": "10% Student Discount"
+        },
+        {
+            "type": "text",
+            "id": "ribbon_item_2",
+            "label": "Promo Text 2",
+            "default": "-10% Off on Orders over $300"
+        },
+        {
+            "type": "text",
+            "id": "ribbon_item_3",
+            "label": "Promo Text 3",
+            "default": "-20% Off on Orders over $500"
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Inspiration",
+            "type":"image-link",
+            "settings":[{
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Link Title"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label": "Link URL"
+            },{
+                "type": "image_picker",
+                "id": "img",
+                "label": "Image"
+            }]
+        }
+    ]
+  }
+{% endschema %}

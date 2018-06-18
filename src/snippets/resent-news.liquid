@@ -1,0 +1,7 @@
+<a href="{{ _article.url }}" class="resent-article">
+    <div class="resent-article__img" style="background-image:url({{ _article.image | img_url:'400x' }});"></div>
+    <h4 class="resent-article__title">{{ _article.title }}</h4>
+    <div class="resent-article__date">
+        {{ _article.published_at | date: "%d %B %Y" }}
+    </div>
+</a>

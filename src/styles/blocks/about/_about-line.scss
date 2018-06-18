@@ -1,0 +1,245 @@
+.about-line {
+    padding-bottom:120px;
+}
+
+.about-line__image {
+    padding-top: 102%;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.about-line__title {
+    margin-bottom: 35px;
+
+    @media (max-width: 1400px) {
+        margin-bottom:20px;
+    }
+
+    @include breakpoint(small-tablet-portrait){
+        margin-bottom:10px;
+        font-size:14px;
+        line-height:1.2;
+    }
+}
+
+.about-line__text {
+    line-height: 1.8;
+    font-size: 16px;
+    p + p {
+        margin-top: 30px;
+    }
+
+    @media (max-width: 1700px) {
+        line-height: 1.6;
+        font-size:14px;
+
+        p + p {
+            margin-top: 20px;
+            @include breakpoint(small-tablet-portrait){
+                margin-top: 12px;
+            }
+        }
+    }
+}
+
+.about-line__text-col {
+    max-width: 450px;
+
+    @include breakpoint(extra-small){
+        margin-top:25px;
+        max-width: 100%;
+    }
+
+    @include breakpoint(small-tablet-portrait){
+        margin-top:15px;
+    }
+}
+
+.about-line__text-col--padding-left {
+    padding-left: 45px;
+    margin-right: auto;
+    margin-left: 0;
+
+    @media (max-width: 1700px) {
+        padding-left: 25px;
+    }
+
+    @include breakpoint(small){
+        padding-left:0;
+    }
+}
+
+.about-line__text-col--padding-right {
+    padding-right: 45px;
+    margin-right: 0;
+    margin-left: auto;
+
+    @media (max-width: 1700px) {
+        padding-right: 25px;
+    }
+
+    @include breakpoint(small){
+        padding-right:0;
+    }
+}
+
+.about-line__image-wrapper{
+    @include breakpoint(small-tablet-portrait){
+        margin-right:-20px!important;
+        margin-left:-20px!important;
+        width:calc(100% + 40px);
+    }
+}
+
+.about-line__image-wrapper--padding-left {
+    margin-left: 45px;
+
+    @media (max-width: 1400px) {
+        margin-left: 25px;
+    }
+
+    @include breakpoint(small){
+        margin-left:0;
+    }
+}
+
+.about-line__image-wrapper--padding-right {
+    margin-right: 45px;
+
+    @media (max-width: 1400px) {
+        margin-right: 25px;
+    }
+
+    @include breakpoint(small){
+        margin-right:0;
+    }
+
+}
+
+.about-line--second {
+    position: relative;
+    z-index:2;
+    flex-direction: row-reverse;
+    margin-top: -140px;
+    align-items: center;
+
+    .about-line__text-col {
+        padding-top: 100px;
+    }
+
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        border: 10px solid $ribbon-color;
+        width:55vw;
+        height:35vw;
+        bottom:100px;
+        right:30vw;
+        z-index:-2;
+
+        @media (max-width: 1700px) {
+            width:calc(35vw + 250px);
+            bottom:30px;
+            height:38vw;
+        }
+
+        @media (max-width: 1400px) {
+            width:calc(45vw + 200px);
+        }
+
+        @include breakpoint(medium){
+            height:48vw;
+        }
+
+        @include breakpoint(small){
+            height:53vw;
+            width:calc(45vw + 300px);
+        }
+
+        @include breakpoint(extra-small){
+            display: none;
+        }
+    }
+
+    @media (max-width: 1700px) {
+        margin-top: -40px;
+        align-items: flex-end;
+
+        .about-line__text-col {
+            padding-top: 0;
+            padding-bottom: 100px;
+        }
+    }
+
+    @include breakpoint(small){
+        margin-top: 60px;
+
+        align-items:center;
+
+        .about-line__text-col {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    @include breakpoint(extra-small){
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top:0;
+        margin-bottom:25px;
+    }
+}
+
+.about-line--first {
+    position: relative;
+    z-index:3;
+    align-items: center;
+
+    .about-line__text-col {
+        padding-bottom: 130px;
+    }
+
+    @media (max-width: 1700px) {
+        align-items: flex-start;
+
+        .about-line__text-col {
+            padding-bottom: 0;
+            padding-top: 50px;
+        }
+    }
+
+    @include breakpoint(small){
+        align-items:center;
+        .about-line__text-col {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    @include breakpoint(extra-small){
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top:0;
+        margin-bottom:25px;
+    }
+}
+
+.about-line--third{
+    margin-top:120px;
+
+    @include breakpoint(extra-small){
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top:0;
+        margin-bottom:25px;
+    }
+}
+
+.about-line--third{
+    align-items:center;
+}
+
+.about-line__image--slim{
+    padding-top:46%;
+}

@@ -1,0 +1,218 @@
+<section class="contacts" style="background-image:url({{ section.settings.img | img_url: 'master' }});">
+    <div class="container-fluid">
+        <div class="row justify-content-center ">
+            <div class="col-xl-5  col-lg-6 contacts-info">
+                <div class="contacts-info__inner">
+                    <h2 class="contacts-info__title">{{ section.settings.title }}</h2>
+                    <p class="contacts-info__description">{{ section.settings.subtitle }}</p>
+                    <div class="row contacts__list no-gutters">
+                        {% if section.settings.phone %}
+                            <div class="col-auto contacts__item">
+                                <div class="contacts__item-inner">
+                                    <span class="contacts__item-item">Phone</span>
+                                    <a href="" class="contacts__link">{{ section.settings.phone }}</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if section.settings.email %}
+                            <div class="col-auto contacts__item">
+                                <div class="contacts__item-inner">
+                                    <span class="contacts__item-item">Email</span>
+                                    <a href="" class="contacts__link">{{ section.settings.email }}</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if section.settings.email %}
+                            <div class="col-auto contacts__item">
+                                <div class="contacts__item-inner">
+                                    <span class="contacts__item-item">Fax</span>
+                                    <a href="" class="contacts__link">{{ section.settings.fax }}</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="contacts-social">
+                        <span class="contacts-social__title">Follow Us</span>
+                        {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+                        <ul class="contacts-social__list">
+                            {% for social in social_accounts %}
+                                {%- assign social_handle = social | handleize -%}
+                                {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+                                {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+
+                                {% if settings[social_link] != blank %}
+                                    <li class="contacts-social__item">
+                                        <a href="{{ settings[social_link] }}" class="contacts-social__icon icon-{{ social_handle }}"
+                                           title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
+                                            {% include social_icon %}
+                                            <span>{{ social }}</span>
+                                        </a>
+                                    </li>
+                                {% endif %}
+
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-6 desktop-contact-form">
+                <div class="contact-form-wrapper">
+                    {% form 'contact' %}
+                    <div class="contact-form__inner">
+                        <h2 class="contact-form__title">{{ section.settings.contact_form_title }}</h2>
+                        <p class="contact-form__subtitle">{{ section.settings.contact_form_subtitle }}</p>
+                        {% if form.posted_successfully? %}
+                            <div class="contact-form__success">Comment posted successfully!</div>
+                        {% else %}
+                            <div class="contact-form__error">{{ form.errors | default_errors }}</div>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-6 contact-form__col">
+                                <input class="input input--light input--full" required type="text" name="contact[first_name]"
+                                       placeholder="{{ section.settings.input_1_placeholder }}">
+                            </div>
+                            <div class="col-6 contact-form__col">
+                                <input class="input input--light input--full" required type="text" name="contact[last_name]"
+                                       placeholder="{{ section.settings.input_2_placeholder }}">
+                            </div>
+                            <div class="col-6 contact-form__col">
+                                <input class="input input--light input--full" required type="email" name="contact[email]" placeholder="{{ section.settings.input_3_placeholder }}">
+                            </div>
+                            <div class="col-6 contact-form__col">
+                                <input class="input input--light input--full" type="text" name="contact[phone]" placeholder="{{ section.settings.input_4_placeholder }}">
+                            </div>
+                            <div class="col contact-form__col">
+                                <textarea name="contact[message]" required placeholder="{{ section.settings.input_5_placeholder }}"></textarea>
+                            </div>
+                        </div>
+                        <div class="contact-form__btn-row">
+                            <button class="btn" type="submit">{{ section.settings.btn_text }}</button>
+                        </div>
+
+
+                    </div>
+                    {% endform %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="mobile-contact-form">
+    <div class="contact-form-wrapper">
+        {% form 'contact' %}
+        <div class="contact-form__inner">
+            <h2 class="contact-form__title">{{ section.settings.contact_form_title }}</h2>
+            <p class="contact-form__subtitle">{{ section.settings.contact_form_subtitle }}</p>
+            {% if form.posted_successfully? %}
+                <div class="contact-form__success">{{ "custom.success" | t }}</div>
+            {% else %}
+                <div class="contact-form__error">{{ form.errors | default_errors }}</div>
+            {% endif %}
+            <div class="row">
+                <div class="col-6 contact-form__col">
+                    <input class="input input--full input--light" required type="text" name="contact[First Name]" placeholder="{{ section.settings.input_1_placeholder }}">
+                </div>
+                <div class="col-6 contact-form__col">
+                    <input class="input input--full input--light" required type="text" name="contact[Last Name]" placeholder="{{ section.settings.input_2_placeholder }}">
+                </div>
+                <div class="col-6 contact-form__col">
+                    <input class="input input--full input--light" required type="email" name="contact[Email]" placeholder="{{ section.settings.input_3_placeholder }}">
+                </div>
+                <div class="col-6 contact-form__col">
+                    <input class="input input--full input--light" type="text" name="contact[Phone]" placeholder="{{ section.settings.input_4_placeholder }}">
+                </div>
+                <div class="col contact-form__col">
+                    <textarea name="contact[Message]" required placeholder="{{ section.settings.input_5_placeholder }}"></textarea>
+                </div>
+            </div>
+            <div class="contact-form__btn-row">
+                <button class="btn" type="submit">{{ section.settings.btn_text }}</button>
+            </div>
+        </div>
+    </div>
+    {% endform %}
+</div>
+
+{% schema %}
+{
+    "name": "Contacts",
+    "settings":[{
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"Contact Us"
+    },{
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default":"Our values – beautiful apparel, exceptional service and deep appreciation for our customers – are the heart of our business. "
+    },{
+        "type": "image_picker",
+        "id": "img",
+        "label": "Background Image"
+    },{
+        "type":"header",
+        "content":"Contact items"
+    },{
+        "type": "text",
+        "id": "phone",
+        "label": "Phone",
+        "default":"+1 (800) 305-3055"
+    },{
+        "type": "text",
+        "id": "email",
+        "label": "Email",
+        "default":"info@lavishewear.com"
+    },{
+        "type": "text",
+        "id": "fax",
+        "label": "Fax",
+        "default":"+1 (305) 305-3056"
+    },{
+        "type":"header",
+        "content":"Contact form settings"
+    },{
+        "type": "text",
+        "id": "contact_form_title",
+        "label": "Contact Form Title",
+        "default":"Get In Touch"
+    },{
+        "type": "text",
+        "id": "contact_form_subtitle",
+        "label": "Contact Form Subitle",
+        "default":"Need help? We’ve got you! For information about your order, our products, or any other questions give us a shout below."
+    },{
+        "type": "text",
+        "id": "input_1_placeholder",
+        "label": "Placeholder 1",
+        "default":"First Name"
+    },{
+        "type": "text",
+        "id": "input_2_placeholder",
+        "label": "Placeholder ",
+        "default":"Last Name"
+    },{
+        "type": "text",
+        "id": "input_3_placeholder",
+        "label": "Placeholder 3",
+        "default":"Email"
+    },{
+        "type": "text",
+        "id": "input_4_placeholder",
+        "label": "Placeholder 4",
+        "default":"Phone"
+    },{
+        "type": "text",
+        "id": "input_5_placeholder",
+        "label": "Placeholder 5",
+        "default":"Enter Your Message"
+    },{
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button Text",
+        "default":"Send Message"
+    }
+    ]
+}
+{% endschema %}

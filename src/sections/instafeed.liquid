@@ -1,0 +1,45 @@
+<section class="instafeed-section">
+    <div class="container-fluid">
+        <div class="row justify-content-center ">
+            <div class="col-xl-10">
+                <h2 class="instafeed-section__title">{{ section.settings.title }}</h2>
+                <p class="instafeed-section__name-line">
+                    <a class="instafeed-section__link" href="//www.instagram.com/{{ section.settings.insta_name }}">@{{ section.settings.insta_name }}</a>
+                </p>
+                <div class="instafeed" id="instafeed" data-userid="{{ section.settings.userid }}" data-token="{{ section.settings.token }}"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Instafeed",
+    "settings": [{
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"Instagram Feed"
+    },{
+        "type": "text",
+        "id": "insta_name",
+        "label": "Insta Name"
+    },{
+        "type": "text",
+        "id": "userid",
+        "label": "User ID",
+        "info": "[Get Instagram User Id](http:\/\/www.ershad7.com\/InstagramUserID)"
+    },{
+        "type": "text",
+        "id": "token",
+        "label": "Access Token",
+        "info": "[Instagram access token generator](http:\/\/instagram.pixelunion.net\/)"
+    }],
+    "presets": [
+        {
+            "name": "Instafeed",
+            "category": "Homepage"
+        }
+    ]
+}
+{% endschema %}

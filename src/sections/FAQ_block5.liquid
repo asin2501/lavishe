@@ -1,0 +1,38 @@
+<div class="faq-section">
+    <h3 class="faq-section__title js-faq-title">{{ section.settings.title }}</h3>
+    <ul class="faq__list">
+        {% for block in section.blocks %}
+            <li class="faq__item faq-item">
+                <div class="faq-item__question js-question">{{ forloop.index }}. {{ block.settings.q }}</div>
+                <div class="faq-item__answer">{{ block.settings.a }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% schema %}
+{
+    "name": "FAQ Block 5",
+    "settings":[{
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"International FAQ"
+    }],
+    "blocks":[{
+        "type":"QAndA",
+        "name":"Quest & Answer",
+        "settings":[{
+                "type": "text",
+                "id": "q",
+                "label": "Quest",
+                "default":"What if an item is unavailable or backordered?"
+            },{
+                "type": "textarea",
+                "id": "a",
+                "label": "Answer",
+                "default":"While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+        }]
+    }]
+}
+{% endschema %}

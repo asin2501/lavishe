@@ -1,0 +1,148 @@
+<div class="js-full-cart" {% if cart.item_count == 0 %}style="display:none"{% endif %}>
+<form action="/cart" method="post" class="cart-page container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-12 col-sm-10">
+                <h2 class="cart-page__title">Shopping Cart</h2>
+                <table class="table-cart">
+                    <thead class="table-cart__header">
+                    <tr>
+                        <th class="table-cart__img-col">{{ "cart.label.product" | t }}</th>
+                        <th class="table-cart__title-col"></th>
+                        <th class="table-cart__price-col">{{ "cart.label.price" | t }}</th>
+                        <th class="table-cart__qty-col">{{ "cart.label.quantity" | t }}</th>
+                        <th class="table-cart__total-col">{{ "cart.label.total" | t }}</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-cart__body">
+                    {% for item in cart.items %}
+                        <tr class="js-cart-row">
+                            <td class="table-cart__img-col">
+                                {% if item.image != blank %}
+                                    <a href="{{ item.url | within: collections.all }}" class="table-cart__img-prod-link">
+                                        {{ item | img_url: '160x' | img_tag: item.title }}
+
+                                    </a>
+                                {% endif %}
+                            </td>
+                            <td class="table-cart__title-col">{{ item.product.title }}</td>
+                            <td class="table-cart__price-col">
+                                {{ item.price | money }}
+                            </td>
+                            <td class="table-cart__qty-col">
+                                <p class="table-cart__mob-title">
+                                    {{ item.product.title }}
+                                </p>
+                                <div class="qty js-qty">
+                                    <button type="button" class="qty__minus js-minus">&ndash;</button>
+                                    <input type="text"
+                                           name="updates[]"
+                                           id="updates_{{ item.key }}"
+                                           value="{{ item.quantity }}"
+                                           class="qty__input input js-inp js-digin-input"/>
+
+                                    <button type="button" class="qty__plus js-plus">+</button>
+                                </div>
+                                <p class="table-cart__mob-price">{{ item.line_price | money }}</p>
+                                <button type="button" class="cart-btn-close cart-btn-close--mobile js-close" data-id="{{ item.id }}">{% include 'icon-close' %}</button>
+                            </td>
+                            <td class="table-cart__total-col">
+                                <div class="table-cart__total">
+                                    <span>{{ item.line_price | money }}</span>
+                                    <button type="button" class="cart-btn-close js-close" data-id="{{ item.id }}">{% include 'icon-close' %}</button>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-8 col-sm-10 cart-page__summary">
+            <div class="card-wrapper card-wrapper--alt-color">
+                <div class="card-wrapper__header">
+                    <h5>{{ 'cart.general.summary_title' | t }}</h5>
+                </div>
+                <div class="card-wrapper__body">
+                    <div class="summary">
+                        <div class="summary__top">
+                            <h5>{{ 'cart.general.subtotal' | t }}:</h5><span>{{ cart.total_price | money }}</span>
+                        </div>
+                        <div class="summary__buttons">
+                            <button class="transparent-btn transparent-btn--black btn--full">{{ 'cart.general.update' | t }}</button>
+                            <a href="checkout/" class="btn btn--full">{{ 'cart.general.checkout' | t }}</a>
+                        </div>
+                        <p class="summary__message">{{ 'cart.general.message' | t }}</p>
+                    </div>
+                    <div class="payment-methods payment-methods__summary">
+                        <ul class="payment-methods__list">
+                            <li class="payment-methods__list-item"><img src="{{ 'payment1.png' | asset_img_url:'50px' }}" alt=""></li>
+                            <li class="payment-methods__list-item"><img src="{{ 'payment2.png' | asset_img_url:'50px' }}" alt=""></li>
+                            <li class="payment-methods__list-item"><img src="{{ 'payment3.png' | asset_img_url:'50px' }}" alt=""></li>
+                            <li class="payment-methods__list-item"><img src="{{ 'payment4.png' | asset_img_url:'50px' }}" alt=""></li>
+                            <li class="payment-methods__list-item"><img src="{{ 'payment5.png' | asset_img_url:'50px' }}" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% assign product = cart.items | last %}
+{% assign product = all_products[product.product.handle] %}
+
+<div class="container-fluid also-like also-like--cart">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="also-like__slider-wrapper">
+                <h3 class="also-like__title">You Might Also Like</h3>
+                {% assign product_list = '' %}
+                {% for i in (1..10) %}
+                    {% assign product_metafield = 'prod' | append: i %}
+                    {% if product.metafields.sf_also_like[product_metafield] %}
+                        {% assign product_list = product_list | append: ',' | append: product.metafields.sf_also_like[product_metafield] %}
+                    {% endif %}
+                {% endfor %}
+                {% assign product_list = product_list | remove_first: "," %}
+                {% assign product_handels = product_list | split:',' %}
+                {% assign length = product_handels | size %}
+
+                {% assign length = product_handels | size %}
+                {% assign rest = 10 | minus: length %}
+
+                {% if rest > 0 %}
+                    {% assign product_collection = product.collections | first %}
+                    {% for prod in product_collection.products %}
+                        {% unless product_list contains prod.handle %}
+                        {% if product.handle != prod.handle %}
+                            {% assign product_list = product_list | append: ',' | append: prod.handle %}
+                        {% endif %}
+                        {% endunless %}
+                    {% endfor %}
+                {% else %}
+                {% endif %}
+
+                {% assign product_handels = product_list | split:',' %}
+
+
+                <div class="also-like__slider" id="also-like-slider">
+                    {% for product_handel in product_handels %}
+                        {% if all_products[product_handel] %}
+                            <div class="also-like__slide">
+                                {% include 'product-card', _product: all_products[product_handel] %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid js-empty-cart"  {% if cart.item_count > 0 %}style="display:none"{% endif %}>
+    <div class="empty-cart">
+        <h3 class="empty-cart__title">{{ 'cart.general.empty' | t }}</h3>
+        <a href="/" class="btn">{{ 'cart.general.continue_shopping' | t }}</a>
+    </div>
+</div>

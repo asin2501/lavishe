@@ -1,0 +1,21 @@
+.empty-cart{
+    padding-top:180px;
+    padding-bottom:180px;
+    text-align: center;
+
+    @include breakpoint(small){
+        @media (orientation:landscape) {
+            padding-top:50px;
+            padding-bottom:50px;
+        }
+    }
+
+    @include breakpoint(extra-small){
+        padding-top:100px;
+        padding-bottom:100px;
+    }
+}
+
+.empty-cart__title{
+    margin-bottom:20px;
+}

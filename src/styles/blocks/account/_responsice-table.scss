@@ -1,0 +1,158 @@
+.responsive-table {
+    width: 100%;
+    border: 5px solid $graySuperLight;
+    border-collapse: collapse;
+
+    th {
+        padding-right: 0;
+        text-align: left;
+        text-transform: uppercase;
+        background-color: $graySuperLight;
+        border-bottom: 5px solid #ececec;
+        height: 55px;
+        line-height: 1;
+    }
+
+    td {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    th, td {
+        padding-left: 30px;
+
+        &:last-child {
+            padding-right: 30px;
+        }
+
+        @media (max-width: 1600px) {
+            padding-left: 20px;
+
+            &:last-child {
+                padding-right: 20px;
+            }
+        }
+
+        @include breakpoint(extra-small) {
+            min-height: 52px;
+            padding-left: 20px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            border-top: 0;
+            border-bottom: 0;
+            line-height: 1.2;
+            height: auto;
+            background-color: transparent;
+        }
+    }
+
+    tr + tr {
+        border-top: 1px solid $graySuperLight;
+    }
+
+    @include breakpoint(extra-small) {
+        display: flex;
+        border-left: none;
+        border-right: none;
+
+        tbody {
+            width: calc(100vh - 190px);
+            overflow-x: auto;
+            display: flex;
+            white-space: nowrap;
+            border-right: 5px solid $graySuperLight;
+
+            tr {
+                min-width: 130px;
+                flex-basis: auto;
+                flex-grow: 100;
+
+                display: block;
+                & + tr {
+                    border-top: none;
+                    border-left: 1px solid $graySuperLight;
+                    margin-left: -4px;
+                }
+                td {
+                    display: block;
+                    & + td {
+                        border-top: 1px solid $graySuperLight;
+                    }
+                }
+            }
+
+            @include breakpoint(small-tablet-portrait) {
+                border-right: none;
+            }
+        }
+
+        thead {
+            width: 190px;
+            min-width: 190px;
+            display: block;
+
+            tr {
+                display: block;
+            }
+
+            th {
+                display: block;
+                & + th {
+                    border-top: 1px solid #fff;
+                }
+            }
+
+            @include breakpoint(extra-small) {
+                background-color: $graySuperLight;
+            }
+        }
+    }
+
+    tfoot {
+        border-top: 1px solid $graySuperLight;
+
+        @include breakpoint(extra-small){
+            display: none;
+        }
+    }
+
+    @include breakpoint(mobile){
+        th{
+        font-size:12px;
+        }
+    }
+}
+
+.responsive-table--order {
+    td + td {
+        border-left: 1px solid $graySuperLight;
+
+        @include breakpoint(extra-small){
+            border-left: 0;
+        }
+    }
+
+    td {
+        &:first-child {
+            width: 50%;
+
+            @media(max-width: 1600px) {
+                width: 35%;
+            }
+        }
+
+        &:last-child {
+            width: 120px;
+
+            @include breakpoint(extra-small){
+                width:auto;
+            }
+        }
+    }
+
+    tbody tr{
+        @include breakpoint(extra-small){
+            min-width: 300px;
+        }
+    }
+}

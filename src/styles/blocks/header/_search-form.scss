@@ -1,0 +1,40 @@
+.search-form{
+    position: relative;
+}
+
+.search-form__search-icon{
+    position: absolute;
+    top:8px;
+    right:5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    svg{
+        width:20px;
+        height:20px;
+    }
+}
+
+.search-input{
+    padding-top:12px;
+    padding-bottom:13px;
+    border-radius:0;
+    color: $dark;
+    padding-left:15px;
+    padding-right:40px;
+    width:400px;
+    border: 1px solid transparent;
+    transition: border 200ms;
+
+    &:focus{
+        border-color: $pink;
+    }
+
+    @media (max-width: 1820px){
+        width:180px;
+    }
+
+    @include placeholder{
+        color: rgba($dark, 0.5);
+    }
+}

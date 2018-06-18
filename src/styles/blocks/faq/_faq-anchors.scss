@@ -1,0 +1,50 @@
+.faq-anchors{
+    margin-bottom:30px;
+}
+
+.faq-anchors__item{
+    position: relative;
+    background-color: $graySuperLight;
+    padding-left:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:40px;
+    cursor: pointer;
+    transition: background-color 300ms;
+
+    @include breakpoint(small){
+        padding-left:40px;
+
+    }
+    @include breakpoint(extra-small){
+        padding-left:20px;
+    }
+
+    &::before{
+        content:'';
+        position: absolute;
+        right:15px;
+        top:15px;
+        display: block;
+        width:7px;
+        height:7px;
+        border-bottom:1px solid rgba(#000, 0.5);
+        border-right:1px solid rgba(#000, 0.5);
+        transform: rotateZ(45deg);
+        transition: border-color 300ms;
+        
+    }
+
+    &:hover{
+        background-color: $pink;
+        color: #fff;
+        
+        &::before{
+            border-color: #fff;
+        }
+    }
+}
+
+.faq-anchors__item + .faq-anchors__item{
+    margin-top:1px;
+}

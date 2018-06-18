@@ -1,0 +1,95 @@
+<section class="featured-collections">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-4 col-md-6 featured-collections__col">
+                <a class="featured-collection" href="{{ collections[section.settings.collection_1].url }}"
+                   style="background-image: url({{ section.settings.image_1 | img_url:'900x' }})">
+                    <div class="featured-collection__inner">
+                        <h3 class="featured-collection__title">{{ collections[section.settings.collection_1].title }}</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-4 col-md-6 order-xl-last featured-collections__col">
+                <a class="featured-collection" href="{{ collections[section.settings.collection_4].url }}"
+                   style="background-image: url({{ section.settings.image_4 | img_url:'900x' }})">
+                    <div class="featured-collection__inner">
+                        <h3 class="featured-collection__title">{{ collections[section.settings.collection_4].title }}</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-4 col-md-12 featured-collections__col2">
+                <a class="featured-collection featured-collection--half" href="{{ collections[section.settings.collection_2].url }}"
+                   style="background-image: url({{ section.settings.image_2 | img_url:'900x' }})">
+                    <div class="featured-collection__inner">
+                        <h3 class="featured-collection__title">{{ collections[section.settings.collection_2].title }}</h3>
+                    </div>
+                </a>
+                <a class="featured-collection featured-collection--half" href="{{ collections[section.settings.collection_3].url }}"
+                   style="background-image: url({{ section.settings.image_3 | img_url:'900x' }})">
+                    <div class="featured-collection__inner">
+                        <h3 class="featured-collection__title">{{ collections[section.settings.collection_3].title }}</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Featured Collections",
+    "settings": [
+        {
+            "type":"header",
+            "content":"Collection 1"
+        },{
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Collection Image"
+        },{
+            "type": "collection",
+            "id": "collection_1",
+            "label": "Collection"
+        },{
+            "type":"header",
+            "content":"Collection 2"
+        },{
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "Collection Image"
+        },{
+            "type": "collection",
+            "id": "collection_2",
+            "label": "Collection"
+        },{
+            "type":"header",
+            "content":"Collection 3"
+        },{
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "Collection Image"
+        },{
+            "type": "collection",
+            "id": "collection_3",
+            "label": "Collection"
+        },{
+            "type":"header",
+            "content":"Collection 4"
+        },{
+            "type": "image_picker",
+            "id": "image_4",
+            "label": "Collection Image"
+        },{
+            "type": "collection",
+            "id": "collection_4",
+            "label": "Collection"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Featured collection",
+            "category": "Homepage"
+        }
+    ]
+}
+{% endschema %}

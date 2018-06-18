@@ -1,0 +1,73 @@
+.delivery-returns-tabs{
+    
+    @include breakpoint(small){
+        display: flex;
+    }
+
+}
+
+.delivery-returns-tabs__item{
+    position: relative;
+    border: 1px solid $graySuperLight;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left:20px;
+    padding-right:40px;
+    text-transform: uppercase;
+    transition: background-color 300ms, border-color 300ms;
+    font-weight:bold;
+    cursor: pointer;
+
+    &.delivery-returns-tabs__item--active{
+        background-color: $beige;
+        border-color: $beige
+    }
+
+    &::before{
+        content:'';
+        right:20px;
+        top:20px;
+        border-top:1px solid #000;
+        border-right:1px solid #000;
+        position: absolute;
+        display: block;
+        width:8px;
+        height:8px;
+        transform: rotateZ(45deg);
+        margin-right:0;
+        transition: margin-right 250ms;
+
+        @include breakpoint(small){
+            transform: rotateZ(135deg);
+            top:15px;
+
+        }
+
+        @include breakpoint(mobile){
+            right:15px;
+        }
+
+    }
+
+    &:hover{
+        border-color:#000;
+        &::before{
+            margin-right:-5px;
+        }
+
+        @include breakpoint(small){
+            &::before{
+                margin-right:0;
+            }
+        }
+    }
+
+    @include breakpoint(small){
+        width:50%;
+    }
+
+    @include breakpoint(mobile){
+        padding-right:30px;
+        padding-left:15px;
+    }
+}

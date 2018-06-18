@@ -1,0 +1,48 @@
+.menu-btn{
+    width:22px;
+    height:18px;
+    margin-top:16px;
+    margin-left:14px;
+
+    span{
+        position: relative;
+        display: block;
+        width:24px;
+        height:1px;
+        border-top:1px solid #fff;
+        transition-duration: 500ms;
+        transition-property: opacity, transform, top;
+    }
+
+    span:nth-child(1){
+
+    }
+    span:nth-child(2){
+        top:6px;
+        //transition-duration: 300ms;
+        transition-delay: 250ms;
+
+    }
+    span:nth-child(3){
+        top:12px;
+        //transition-duration: 300ms;
+    }
+}
+
+.mob-menu-opened{
+    .menu-btn{
+        span:nth-child(1){
+            top:7px;
+            transform: rotateZ(45deg);
+        }
+        span:nth-child(2){
+            transform: translateX(-40px);
+            transition-delay: 0s;
+            opacity: 0;
+        }
+        span:nth-child(3){
+            top:5px;
+            transform: rotateZ(-45deg);
+        }
+    }
+}

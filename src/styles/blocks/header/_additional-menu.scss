@@ -1,0 +1,23 @@
+.additional-menu{
+    display: flex;
+    @include breakpoint(medium){
+        display: none;
+    }
+}
+
+.additional-menu__link{
+    color: #fff;
+    text-transform: uppercase;
+
+    @media (max-width: 1820px){
+        font-size:13px;
+    }
+}
+
+.additional-menu__item{
+    margin-left:34px;
+
+    @media (max-width: 1820px){
+        margin-left:18px;
+    }
+}

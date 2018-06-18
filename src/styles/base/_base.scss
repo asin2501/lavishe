@@ -1,0 +1,61 @@
+@import url('_variables.scss');
+@import url('_fonts.scss');
+@import url('_utils.scss');
+@import url('_typography.scss');
+@import url('_bootstrap-grid.scss');
+
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html,
+body, .scroll-container {
+    height: 100%;
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+    padding-top:160px;
+    @include breakpoint(medium){
+        padding-top:50px;
+    }
+}
+
+
+.shopify-challenge__container{
+    padding-top:100px;
+    padding-bottom:100px;
+}
+
+a,img, span {
+    display: inline-block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    line-height: 1;
+    text-decoration: none;
+}
+

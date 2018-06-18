@@ -1,0 +1,819 @@
+{
+    "current": {
+        "type_base_size": "16px",
+        "color_primary": "#000",
+        "color_body_text": "#000",
+        "social_sharing_blog": true,
+        "share_facebook": true,
+        "share_twitter": true,
+        "share_pinterest": true,
+        "social_twitter_link": "asda",
+        "social_facebook_link": "asd",
+        "social_pinterest_link": "asd",
+        "social_instagram_link": "das",
+        "social_snapchat_link": "",
+        "social_tumblr_link": "",
+        "social_youtube_link": "",
+        "social_vimeo_link": "",
+        "cart_notes_enable": true,
+        "favicon": "",
+        "checkout_header_image": "",
+        "checkout_logo_image": "",
+        "checkout_logo_position": "left",
+        "checkout_logo_size": "medium",
+        "checkout_body_background_image": "",
+        "checkout_body_background_color": "#fff",
+        "checkout_input_background_color_mode": "white",
+        "checkout_sidebar_background_image": "",
+        "checkout_sidebar_background_color": "#fafafa",
+        "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+        "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+        "checkout_accent_color": "#197bbd",
+        "checkout_button_color": "#197bbd",
+        "checkout_error_color": "#e32c2b",
+        "sections": {
+            "header": {
+                "type": "header",
+                "blocks": {
+                    "1527749169035": {
+                        "type": "image-link",
+                        "settings": {
+                            "title": "Insiders",
+                            "url": "shopify:\/\/pages\/insiders",
+                            "img": "shopify:\/\/shop_images\/sushi.jpg"
+                        }
+                    },
+                    "1527749177538": {
+                        "type": "image-link",
+                        "settings": {
+                            "title": "Style Feed",
+                            "url": "shopify:\/\/blogs\/style-feed",
+                            "img": "shopify:\/\/shop_images\/root-vegetable-salad.jpg"
+                        }
+                    },
+                    "1527749182553": {
+                        "type": "image-link",
+                        "settings": {
+                            "title": "Link Title",
+                            "url": "",
+                            "img": "shopify:\/\/shop_images\/beach-sand-footprints.jpg"
+                        }
+                    }
+                },
+                "block_order": [
+                    "1527749169035",
+                    "1527749177538",
+                    "1527749182553"
+                ],
+                "settings": {
+                    "logo": "",
+                    "additional_linklist": "header-additional-menu",
+                    "main_link_1": "Women",
+                    "main_link_url_1": "",
+                    "submenu1": "submenu-1",
+                    "main_link_2": "Girls",
+                    "main_link_url_2": "",
+                    "submenu2": "submenu-2",
+                    "search_placeholder": "Search Out Store...",
+                    "ribbon_item_1": "10% Student Discount",
+                    "ribbon_item_2": "-10% Off on Orders over $300",
+                    "ribbon_item_3": "-20% Off on Orders over $500"
+                }
+            },
+            "footer": {
+                "type": "footer",
+                "blocks": {
+                    "1527842306693": {
+                        "type": "payment-method",
+                        "settings": {
+                            "payment-method-img": "shopify:\/\/shop_images\/payment1.png"
+                        }
+                    },
+                    "1527842322196": {
+                        "type": "payment-method",
+                        "settings": {
+                            "payment-method-img": "shopify:\/\/shop_images\/payment2.png"
+                        }
+                    },
+                    "1527842333741": {
+                        "type": "payment-method",
+                        "settings": {
+                            "payment-method-img": "shopify:\/\/shop_images\/payment3.png"
+                        }
+                    },
+                    "1527842343757": {
+                        "type": "payment-method",
+                        "settings": {
+                            "payment-method-img": "shopify:\/\/shop_images\/payment4.png"
+                        }
+                    },
+                    "1527842363375": {
+                        "type": "payment-method",
+                        "settings": {
+                            "payment-method-img": "shopify:\/\/shop_images\/payment5.png"
+                        }
+                    }
+                },
+                "block_order": [
+                    "1527842306693",
+                    "1527842322196",
+                    "1527842333741",
+                    "1527842343757",
+                    "1527842363375"
+                ],
+                "settings": {
+                    "cs_title": "Customer service",
+                    "phone": "+1 (800) 305-3055",
+                    "email": "info@lavishewear.com",
+                    "menu1": "navigation",
+                    "menu2": "shop",
+                    "menu3": "customer-info",
+                    "form_title": "Stay Connected",
+                    "form_placeholder": "Enter Email Address",
+                    "btn_text": "Submit",
+                    "form_action": "https:\/\/beta.us16.list-manage.com\/subscribe\/post?u=5215892ebe0dfb898b9ff1233&id=eda28d4d82",
+                    "bottom_menu": "bottom-menu",
+                    "payment_options_title": "Payment Options"
+                }
+            },
+            "1527864117434": {
+                "type": "slider",
+                "blocks": {
+                    "1527864124425": {
+                        "type": "slide",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/beach-sand-footprints.jpg",
+                            "line1": "<p>Let The<\/p>",
+                            "line2": "<p><strong>Easter Treats<\/strong><\/p>",
+                            "line3": "<p>Begin<\/p>",
+                            "subtitle": "Take off 20% sitewide using code",
+                            "btn_url": "",
+                            "btn_text": "Link to Collection"
+                        }
+                    },
+                    "1528105324884": {
+                        "type": "slide",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/branch-of-sumac-in-a-field.jpg",
+                            "line1": "<p>Let The<\/p>",
+                            "line2": "<p>Easter <strong>Treats<\/strong><\/p>",
+                            "line3": "<p>Begin<\/p>",
+                            "subtitle": "Take off 20% sitewide using code",
+                            "btn_url": "",
+                            "btn_text": "Link to Collection"
+                        }
+                    },
+                    "1528105356225": {
+                        "type": "slide",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/light-trails-through-underpass.jpg",
+                            "line1": "<p>Let <strong>The<\/strong><\/p>",
+                            "line2": "<p>Easter Treats<\/p>",
+                            "line3": "<p><strong>Begin<\/strong><\/p>",
+                            "subtitle": "Take off 20% sitewide using code",
+                            "btn_url": "",
+                            "btn_text": "Link to Collection"
+                        }
+                    }
+                },
+                "block_order": [
+                    "1527864124425",
+                    "1528105324884",
+                    "1528105356225"
+                ],
+                "settings": {
+                    "autoplay": false,
+                    "animation_type": "slide",
+                    "autoplay_speed": 5,
+                    "anim_speed": 0.6
+                }
+            },
+            "1528097256725": {
+                "type": "featured-collections",
+                "settings": {
+                    "image_1": "shopify:\/\/shop_images\/woman-in-orange-zip-up-jacket.jpeg",
+                    "collection_1": "frontpage",
+                    "image_2": "shopify:\/\/shop_images\/woman-in-park-afternoon.jpeg",
+                    "collection_2": "frontpage",
+                    "image_3": "shopify:\/\/shop_images\/grey-and-peach-scarf-product.jpg",
+                    "collection_3": "frontpage",
+                    "image_4": "shopify:\/\/shop_images\/woman-throwing-snow-in-park.jpg",
+                    "collection_4": "frontpage"
+                }
+            },
+            "1528100412826": {
+                "type": "text-banner",
+                "settings": {
+                    "image": "shopify:\/\/shop_images\/branch-of-sumac-in-a-field.jpg",
+                    "title": "About Lavishe",
+                    "subtitle": "We sell cutting-edge fashion and offer a wide variety of fashion-related content, making Lavishe Wear the hub of a thriving fashion community.",
+                    "btn_text": "Read More",
+                    "btn_url": ""
+                }
+            },
+            "1528111809278": {
+                "type": "instafeed",
+                "settings": {
+                    "title": "Instagram Feed",
+                    "insta_name": "lavishewear",
+                    "userid": "",
+                    "token": ""
+                }
+            },
+            "1528117719580": {
+                "type": "featured-proudcts",
+                "settings": {
+                    "title": "Women’s Clothing",
+                    "collection": "frontpage",
+                    "button_text": "View More",
+                    "cat_list": "Tops,Shirts,Blouses,Bottoms,Skirts,Jeans,Dresses,Outerwear"
+                }
+            },
+            "insiders": {
+                "type": "insiders",
+                "blocks": {
+                    "1528197082052": {
+                        "type": "insider",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/insider.png",
+                            "hover_image": "shopify:\/\/shop_images\/insider2.png",
+                            "name": "@LAVISHE_HANNAH",
+                            "description": "Follow me for my unique take on LA vintage and oversized pieces.",
+                            "link": ""
+                        }
+                    },
+                    "1528197171011": {
+                        "type": "insider",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/insider.png",
+                            "hover_image": "shopify:\/\/shop_images\/insider2.png",
+                            "name": "@SOME_NAME",
+                            "description": "Some description",
+                            "link": ""
+                        }
+                    },
+                    "1528197200178": {
+                        "type": "insider",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/insider2.png",
+                            "hover_image": "",
+                            "name": "@SOME_NAME",
+                            "description": "Some description",
+                            "link": ""
+                        }
+                    },
+                    "1528197206642": {
+                        "type": "insider",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/insider.png",
+                            "hover_image": "",
+                            "name": "@SOME_NAME",
+                            "description": "Some description",
+                            "link": ""
+                        }
+                    },
+                    "1528197211479": {
+                        "type": "insider",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/insider2.png",
+                            "hover_image": "",
+                            "name": "@SOME_NAME",
+                            "description": "Some description",
+                            "link": ""
+                        }
+                    },
+                    "1528197216064": {
+                        "type": "insider",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/insider.png",
+                            "hover_image": "",
+                            "name": "@SOME_NAME",
+                            "description": "Some description",
+                            "link": ""
+                        }
+                    },
+                    "1528197220576": {
+                        "type": "insider",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/insider2.png",
+                            "hover_image": "",
+                            "name": "@SOME_NAME",
+                            "description": "Some description",
+                            "link": ""
+                        }
+                    },
+                    "1528197228825": {
+                        "type": "insider",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/insider.png",
+                            "hover_image": "",
+                            "name": "@SOME_NAME",
+                            "description": "Some description",
+                            "link": ""
+                        }
+                    },
+                    "1528197233103": {
+                        "type": "insider",
+                        "settings": {
+                            "image": "shopify:\/\/shop_images\/insider2.png",
+                            "hover_image": "",
+                            "name": "@SOME_NAME",
+                            "description": "Some description",
+                            "link": ""
+                        }
+                    }
+                },
+                "block_order": [
+                    "1528197082052",
+                    "1528197171011",
+                    "1528197200178",
+                    "1528197206642",
+                    "1528197211479",
+                    "1528197216064",
+                    "1528197220576",
+                    "1528197228825",
+                    "1528197233103"
+                ],
+                "settings": {
+                    "title": "Meet the Team",
+                    "subtitle": "Follow your favourite Insider and shop their #LWs straight from Instagram."
+                }
+            },
+            "contacts": {
+                "type": "contacts",
+                "settings": {
+                    "title": "Contact Us",
+                    "subtitle": "Our values – beautiful apparel, exceptional service and deep appreciation for our customers – are the heart of our business.",
+                    "img": "shopify:\/\/shop_images\/bg_image.png",
+                    "phone": "+1 (800) 305-3055",
+                    "email": "info@lavishewear.com",
+                    "fax": "+1 (305) 305-3056",
+                    "contact_form_title": "Get In Touch",
+                    "contact_form_subtitle": "Need help? We’ve got you! For information about your order, our products, or any other questions give us a shout below.",
+                    "input_1_placeholder": "First Name",
+                    "input_2_placeholder": "Last Name",
+                    "input_3_placeholder": "Email",
+                    "input_4_placeholder": "Phone",
+                    "input_5_placeholder": "Enter Your Message",
+                    "btn_text": "Send Message"
+                }
+            },
+            "delivery_and_returns": {
+                "type": "delivery_and_returns",
+                "blocks": {
+                    "1528274727506": {
+                        "type": "delivery-item",
+                        "settings": {
+                            "img": "",
+                            "title": "Standard Delivery",
+                            "note": "Note: Subject to placing your order before specific cut-off times. Details available in checkout.",
+                            "list": "<ul>\n<li>Delivered on or before Friday, 20 April 2018<\/li>\n<li>Delivery is Monday to Sunday<\/li>\n<\/ul>",
+                            "price": "$10.00",
+                            "conditions": "Free– spend over $25.00"
+                        }
+                    },
+                    "1528274731212": {
+                        "type": "delivery-item",
+                        "settings": {
+                            "img": "",
+                            "title": "Standard Delivery",
+                            "note": "Note: Subject to placing your order before specific cut-off times. Details available in checkout.",
+                            "list": "<ul>\n<li>Delivered on or before Friday, 20 April 2018<\/li>\n<li>Delivery is Monday to Sunday<\/li>\n<\/ul>",
+                            "price": "$10.00",
+                            "conditions": "Free– spend over $25.00"
+                        }
+                    },
+                    "1528274732666": {
+                        "type": "delivery-item",
+                        "settings": {
+                            "img": "",
+                            "title": "Standard Delivery",
+                            "note": "Note: Subject to placing your order before specific cut-off times. Details available in checkout.",
+                            "list": "<ul>\n<li>Delivered on or before Friday, 20 April 2018<\/li>\n<li>Delivery is Monday to Sunday<\/li>\n<\/ul>",
+                            "price": "$10.00",
+                            "conditions": "Free– spend over $25.00"
+                        }
+                    },
+                    "1528274734330": {
+                        "type": "delivery-item",
+                        "settings": {
+                            "img": "",
+                            "title": "Standard Delivery",
+                            "note": "Note: Subject to placing your order before specific cut-off times. Details available in checkout.",
+                            "list": "<ul>\n<li>Delivered on or before Friday, 20 April 2018<\/li>\n<li>Delivery is Monday to Sunday<\/li>\n<\/ul>",
+                            "price": "$10.00",
+                            "conditions": "Free– spend over $25.00"
+                        }
+                    },
+                    "1528282517901": {
+                        "type": "returns-item",
+                        "settings": {
+                            "img": "",
+                            "title": "InPost 24\/7 Lockers",
+                            "list": "<ul>\n<li>Return through your nearest InPost Locker in over 1,100 locations<\/li>\n<li>Open 7 days a week 24\/7<\/li>\n<li>You can print a label from the carrier website by clicking the create return link<\/li>\n<li>Your return will be processed in approximately 7 working days<\/li>\n<\/ul>",
+                            "price": "Free",
+                            "link_text": "Create Return",
+                            "link_url": ""
+                        }
+                    },
+                    "1528282528469": {
+                        "type": "returns-item",
+                        "settings": {
+                            "img": "shopify:\/\/shop_images\/delivery-and-returns-logo-02.png",
+                            "title": "Pass My Parcel",
+                            "list": "<ul>\n<li>Return through your nearest InPost Locker in over 1,100 locations<\/li>\n<li>Open 7 days a week 24\/7<\/li>\n<li>You can print a label from the carrier website by clicking the create return link<\/li>\n<li>Your return will be processed in approximately 7 working days<\/li>\n<\/ul>",
+                            "price": "Free",
+                            "link_text": "Create Return",
+                            "link_url": ""
+                        }
+                    },
+                    "1528282535523": {
+                        "type": "returns-item",
+                        "settings": {
+                            "img": "",
+                            "title": "InPost 24\/7 Lockers",
+                            "list": "<ul>\n<li>Return through your nearest InPost Locker in over 1,100 locations<\/li>\n<li>Open 7 days a week 24\/7<\/li>\n<li>You can print a label from the carrier website by clicking the create return link<\/li>\n<li>Your return will be processed in approximately 7 working days<\/li>\n<\/ul>",
+                            "price": "Free",
+                            "link_text": "Create Return",
+                            "link_url": ""
+                        }
+                    },
+                    "1528282538774": {
+                        "type": "returns-item",
+                        "settings": {
+                            "img": "",
+                            "title": "InPost 24\/7 Lockers",
+                            "list": "<ul>\n<li>Return through your nearest InPost Locker in over 1,100 locations<\/li>\n<li>Open 7 days a week 24\/7<\/li>\n<li>You can print a label from the carrier website by clicking the create return link<\/li>\n<li>Your return will be processed in approximately 7 working days<\/li>\n<\/ul>",
+                            "price": "Free",
+                            "link_text": "Create Return",
+                            "link_url": ""
+                        }
+                    }
+                },
+                "block_order": [
+                    "1528274727506",
+                    "1528274731212",
+                    "1528274732666",
+                    "1528274734330",
+                    "1528282517901",
+                    "1528282528469",
+                    "1528282535523",
+                    "1528282538774"
+                ],
+                "settings": {
+                    "title": "Delivery & Returns",
+                    "subtitle": "See below for information about the delivery & returns options in  your country.",
+                    "tab1": "Delivery",
+                    "tab2": "Returns",
+                    "faq-text": "<span>Need More Information?<\/span><span>See our FAQ<\/span>",
+                    "link_url": "shopify:\/\/pages\/help"
+                }
+            },
+            "FAQ_block1": {
+                "type": "FAQ_block1",
+                "blocks": {
+                    "1528286239772": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528286240771": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528286241642": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528286242554": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528286243442": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528286244306": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    }
+                },
+                "block_order": [
+                    "1528286239772",
+                    "1528286240771",
+                    "1528286241642",
+                    "1528286242554",
+                    "1528286243442",
+                    "1528286244306"
+                ],
+                "settings": {
+                    "title": "Order Status & Tracking"
+                }
+            },
+            "FAQ_block2": {
+                "type": "FAQ_block2",
+                "blocks": {
+                    "1528287306315": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528287307922": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528287308905": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528287309858": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528287311281": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528287312696": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528287313800": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    }
+                },
+                "block_order": [
+                    "1528287306315",
+                    "1528287307922",
+                    "1528287308905",
+                    "1528287309858",
+                    "1528287311281",
+                    "1528287312696",
+                    "1528287313800"
+                ],
+                "settings": {
+                    "title": "Ordering & Payment Options"
+                }
+            },
+            "FAQ_block3": {
+                "type": "FAQ_block3",
+                "blocks": {
+                    "1528294646289": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "Shipping Options & Charges",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294647334": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "Shipping Options & Charges",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294648205": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "Shipping Options & Charges",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294649527": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "Shipping Options & Charges",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294650445": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "Shipping Options & Charges",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    }
+                },
+                "block_order": [
+                    "1528294646289",
+                    "1528294647334",
+                    "1528294648205",
+                    "1528294649527",
+                    "1528294650445"
+                ],
+                "settings": {
+                    "title": "Order Status & Tracking"
+                }
+            },
+            "FAQ_block4": {
+                "type": "FAQ_block4",
+                "blocks": {
+                    "1528294654351": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294655242": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294656696": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294657959": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    }
+                },
+                "block_order": [
+                    "1528294654351",
+                    "1528294655242",
+                    "1528294656696",
+                    "1528294657959"
+                ],
+                "settings": {
+                    "title": "Technical Questions"
+                }
+            },
+            "FAQ_block5": {
+                "type": "FAQ_block5",
+                "blocks": {
+                    "1528294662074": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294663105": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294664173": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294665446": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294666189": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    },
+                    "1528294666987": {
+                        "type": "QAndA",
+                        "settings": {
+                            "q": "What if an item is unavailable or backordered?",
+                            "a": "While we make every effort to fulfill your order, occasionally certain items may be unavailable. We will notify you via your email confirmation if we are out of stock on an item that you have ordered. Any changes will be removed from your order total and will be reflected on your shipping invoice. Items that are backordered will be indicated in your confirmation."
+                        }
+                    }
+                },
+                "block_order": [
+                    "1528294662074",
+                    "1528294663105",
+                    "1528294664173",
+                    "1528294665446",
+                    "1528294666189",
+                    "1528294666987"
+                ],
+                "settings": {
+                    "title": "International FAQ"
+                }
+            },
+            "about": {
+                "type": "about",
+                "settings": {
+                    "title": "About Us",
+                    "img_section_1": "shopify:\/\/shop_images\/a1.png",
+                    "title_section_1": "What is Lorem Ipsum?",
+                    "text_section_1": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.<\/p><p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\/p>",
+                    "img_section_2": "shopify:\/\/shop_images\/a2.png",
+                    "title_section_2": "Why do we use it?",
+                    "text_section_2": "<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.<\/p><p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.<\/p>",
+                    "img_section_3": "shopify:\/\/shop_images\/a3.png",
+                    "title_section_3": "Where can I get some?",
+                    "text_section_3": "<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.<\/p><p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.<\/p>"
+                }
+            }
+        },
+        "content_for_index": [
+            "1527864117434",
+            "1528097256725",
+            "1528117719580",
+            "1528100412826",
+            "1528111809278"
+        ]
+    },
+    "presets": {
+        "Default": {
+            "sections": {
+                "collection-list": {
+                    "type": "collection-list",
+                    "blocks": {
+                        "collection-list-0": {
+                            "type": "collection",
+                            "settings": {
+                            }
+                        },
+                        "collection-list-1": {
+                            "type": "collection",
+                            "settings": {
+                            }
+                        },
+                        "collection-list-2": {
+                            "type": "collection",
+                            "settings": {
+                            }
+                        }
+                    },
+                    "block_order": [
+                        "collection-list-0",
+                        "collection-list-1",
+                        "collection-list-2"
+                    ],
+                    "settings": {
+                    }
+                },
+                "featured-collection": {
+                    "type": "featured-collection",
+                    "settings": {
+                        "collection": "frontpage"
+                    }
+                },
+                "featured-product": {
+                    "type": "featured-product",
+                    "settings": {
+                    }
+                }
+            },
+            "content_for_index": [
+                "collection-list",
+                "featured-collection",
+                "featured-product"
+            ]
+        }
+    }
+}

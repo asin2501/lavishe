@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/*============================================================================
+  [replace with theme name] | Built with Slate
+    - You cannot use native CSS/Sass @imports in this file without a build script
+==============================================================================*/
+
+/*================ Mixins================*/
+@import url('mixins/_mixins.scss');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+
+
+
+/*================ Base ================*/
+@import url('base/_base.scss');
+
+/*================ Header ================*/
+@import url('blocks/header/_promo-ribbon.scss');
+@import url('blocks/header/_main-menu.scss');
+@import url('blocks/header/_main-header.scss');
+@import url('blocks/header/_additional-menu.scss');
+@import url('blocks/header/_search-form.scss');
+@import url('blocks/header/_header-icon.scss');
+@import url('blocks/header/_submenu.scss');
+@import url('blocks/header/_search-popup.scss');
+@import url('blocks/header/_inspiration.scss');
+
+/*================ Mobmenu ================*/
+@import url('blocks/mobmenu/_mobile-menu.scss');
+@import url('blocks/mobmenu/_menu-btn.scss');
+@import url('blocks/mobmenu/_mobile-menu-tabs.scss');
+@import url('blocks/mobmenu/_mobile-submenu.scss');
+@import url('blocks/mobmenu/_mobile-additional-menu.scss');
+@import url('blocks/mobmenu/_image-links.scss');
+
+/*================ Footer ================*/
+@import url('blocks/footer/_footer.scss');
+@import url('blocks/footer/_footer-customer-service.scss');
+@import url('blocks/footer/_bottom-footer.scss');
+@import url('blocks/footer/_payment-methods.scss');
+@import url('blocks/footer/_soc-link-list.scss');
+@import url('blocks/footer/_footer-menu.scss');
+@import url('blocks/footer/_subscribe-form.scss');
+
+/*================ Common ================*/
+@import url('blocks/common/_btn.scss');
+@import url('blocks/common/_input.scss');
+@import url('blocks/common/_transparent-btn.scss');
+@import url('blocks/common/_slider-btn.scss');
+@import url('blocks/common/_product-card.scss');
+@import url('blocks/common/_breadcrumb.scss');
+@import url('blocks/common/_label.scss');
+@import url('blocks/common/_checkbox.scss');
+@import url('blocks/common/_qty.scss');
+@import url('blocks/common/_select.scss');
+@import url('blocks/common/_card-wrapper.scss');
+
+
+/*================ Home ================*/
+@import url('blocks/home/_section-slider.scss');
+@import url('blocks/home/_featured-collection.scss');
+@import url('blocks/home/_text-banner.scss');
+@import url('blocks/home/_instafeed-section.scss');
+@import url('blocks/home/_featured-products.scss');
+
+/*================ Insiders ================*/
+@import url('blocks/insiders/_insiders.scss');
+@import url('blocks/insiders/_insider.scss');
+
+/*================ Contacts ================*/
+@import url('blocks/contacts/_contacts.scss');
+@import url('blocks/contacts/_contact-form.scss');
+@import url('blocks/contacts/_contacts-info.scss');
+@import url('blocks/contacts/_contacts-social.scss');
+
+/*================ Delivery Returns ================*/
+@import url('blocks/delivery-returns/_delivery-returns.scss');
+@import url('blocks/delivery-returns/_delivery-returns-tabs.scss');
+@import url('blocks/delivery-returns/_delivery-item.scss');
+
+/*================ FAQ ================*/
+@import url('blocks/faq/_faq.scss');
+@import url('blocks/faq/_faq-item.scss');
+@import url('blocks/faq/_faq-section.scss');
+@import url('blocks/faq/_faq-anchors.scss');
+
+/*================ Style Feed ================*/
+@import url('blocks/style-feed/_style-feed.scss');
+@import url('blocks/style-feed/_top-article.scss');
+@import url('blocks/style-feed/_read-more.scss');
+@import url('blocks/style-feed/_article.scss');
+@import url('blocks/style-feed/_article-full.scss');
+@import url('blocks/style-feed/_resent-article.scss');
+@import url('blocks/style-feed/_article-full-sidebar.scss');
+@import url('blocks/style-feed/_social-sharing.scss');
+
+/*================ About ================*/
+@import url('blocks/about/_about.scss');
+@import url('blocks/about/_about-line.scss');
+
+
+/*================ Pages ================*/
+@import url('blocks/pages/_page404.scss');
+@import url('blocks/pages/_text-page.scss');
+
+/*================ Student discount ================*/
+@import url('blocks/student-discount/_student-discount-page.scss');
+@import url('blocks/student-discount/_student-form.scss');
+@import url('blocks/student-discount/_years-line.scss');
+@import url('blocks/student-discount/_student-form-success.scss');
+
+/*================ Product ================*/
+@import url('blocks/product/_product.scss');
+@import url('blocks/product/_thumbnails.scss');
+@import url('blocks/product/_product-slider.scss');
+@import url('blocks/product/_product-info.scss');
+@import url('blocks/product/_also-like.scss');
+
+/*================ Cart ================*/
+@import url('blocks/cart-page/_cart-page.scss');
+@import url('blocks/cart-page/_summary.scss');
+@import url('blocks/cart-page/_cart-table.scss');
+@import url('blocks/cart-page/_empty-cart.scss');
+
+/*================ Account ================*/
+@import url('blocks/account/_login.scss');
+@import url('blocks/account/_account.scss');
+@import url('blocks/account/_responsice-table.scss');
+@import url('blocks/account/_edit-address-form.scss');
+@import url('blocks/account/_address-form.scss');

@@ -1,0 +1,17 @@
+{% if _additional_class %}
+    {% assign size = '1020x' %}
+{% else %}
+    {% assign size = '600x' %}
+{% endif %}
+
+<article class="top-article {{ _additional_class }}" style="background-image:url({{ _article | img_url: size }});">
+    <a class="top-article__link" href="{{ _article.url }}">
+    <footer class="top-article__footer">
+        <h3 class="top-article__title">{{ _article.title }}</h3>
+        <div class="top-article__bottom-footer">
+            <div class="top-article__date">{{ _article.published_at | date: "%d %B %Y" }}</div>
+            <span class="top-article__read-more read-more">{{ 'blogs.article.read_more' | t }}</span>
+        </div>
+    </footer>
+    </a>
+</article>

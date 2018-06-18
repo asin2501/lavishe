@@ -1,0 +1,57 @@
+.style-feed {
+    padding-top: 100px;
+    padding-bottom: 120px;
+    overflow: hidden;
+
+    @include breakpoint(medium){
+        padding-top:80px;
+        padding-bottom:40px;
+    }
+
+    @include breakpoint(small){
+        padding-top:30px;
+        padding-bottom:40px;
+    }
+}
+
+.style-feed__title {
+    text-align: center;
+}
+
+.style-feed__subtitle {
+    text-align: center;
+}
+
+.style-feed__top-widget {
+    margin-top: 50px;
+    
+    @include breakpoint(small){
+        display: none;
+    }
+}
+
+.style-feed__articles-list {
+    margin-top: 20px;
+    & > *:not(:nth-child(n+4)) {
+        display: none;
+        @include breakpoint(medium){
+            display: block;
+        }
+    }
+}
+
+.style-feed__btn-row{
+    text-align: center;
+}
+
+
+.list-item {
+    opacity: 1;
+}
+
+.list-enter-active, .list-leave-active {
+    transition: opacity 1.5s;
+}
+.list-enter, .list-leave-to /* .list-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+}

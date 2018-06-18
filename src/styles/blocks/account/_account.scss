@@ -1,0 +1,77 @@
+.account{
+    padding-top:90px;
+    padding-bottom:120px;
+
+    @include breakpoint(medium){
+        padding-top:60px;
+        padding-bottom:40px;
+    }
+
+    @include breakpoint(small){
+        padding-top:20px;
+        padding-bottom:40px;
+    }
+
+    @include breakpoint(small-tablet-portrait){
+        padding-right:0;
+        padding-left:0;
+        overflow: hidden;
+    }
+}
+
+.account__head{
+    margin-bottom:45px;
+
+    @include breakpoint(small){
+        text-align: center;
+    }
+
+    @include breakpoint(small-tablet-portrait){
+        margin-bottom:25px;
+    }
+}
+
+.accoutn__order-history-title{
+    margin-bottom:30px;
+
+    @include breakpoint(small){
+        margin-bottom:5px;
+    }
+
+    @include breakpoint(small-tablet-portrait){
+        font-size:14px;
+        padding-right:20px;
+        padding-left:20px;
+    }
+}
+
+.account__order-date{
+    border:1px solid $graySuperLight;
+    font-size:12px;
+    color: $grayLight;
+    padding:4px 8px;
+}
+
+.account__order-history-subtitle{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+
+    h3{
+        @include breakpoint(small-tablet-portrait){
+            font-size:14px;
+        }
+    }
+
+    @include breakpoint(small-tablet-portrait){
+        padding-right:30px;
+        padding-left:30px;
+        flex-direction:column;
+
+        *+*{
+            margin-top:10px;
+        }
+
+    }
+}

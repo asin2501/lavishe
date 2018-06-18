@@ -1,0 +1,80 @@
+.contacts {
+    padding-top: 100px;
+    padding-bottom: 170px;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: #fff;
+
+    @include breakpoint(medium){
+        padding-bottom:100px;
+    }
+
+    @include breakpoint(small){
+        padding-bottom:0px;
+    }
+
+
+}
+
+.contacts__item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-left: 1px solid rgba(#fff, 0.3);
+    border-top: 1px solid rgba(#fff, 0.3);
+    border-bottom: 1px solid rgba(#fff, 0.3);
+
+    @media (max-width: 1600px) {
+        border-right: none;
+        border-left:none;
+        border-top: none;
+
+        &:first-child {
+            border-top: 1px solid rgba(#fff, 0.3);
+        }
+    }
+
+    &:last-child {
+        border-right: 1px solid rgba(#fff, 0.3);
+        @media (max-width: 1600px) {
+            border-right: none;
+        }
+        //border-left:none;
+    }
+}
+
+.contacts__list {
+    margin-top: 102px;
+
+    @media (max-width: 1600px) {
+        display: block;
+    }
+
+    @include breakpoint(small){
+        margin-top:30px;
+    }
+}
+
+.contacts__item-item {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.contacts__item-inner {
+    & > * {
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.contacts__link {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 5px transparent;
+    transition: text-shadow 300ms, color 300ms;
+    &:hover {
+        color: $pink;
+        text-shadow: 0 0 5px #000;
+    }
+}

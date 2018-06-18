@@ -1,0 +1,42 @@
+.student-form__line + .student-form__line {
+    margin-top: 37px;
+
+    @include breakpoint(small) {
+        margin-top: 15px;
+    }
+}
+
+.student-form__header {
+    margin-bottom: 60px;
+    @include breakpoint(small-tablet-portrait) {
+        margin-bottom: 20px;
+    }
+}
+
+.student-form__info {
+    margin-top: 6px;
+    position: relative;
+    padding-left: 22px;
+    color: $grayLight;
+    svg {
+        top: 4px;
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        left: 2px;
+        fill: $grayLight;
+    }
+}
+
+.student-form__agree-line {
+    margin-bottom: 35px;
+    @include breakpoint(small-tablet-portrait) {
+        margin-bottom: 15px;
+    }
+}
+
+.student-form__agree-checkbox {
+    position: absolute;
+    top: 2px;
+    left: 1px;
+}

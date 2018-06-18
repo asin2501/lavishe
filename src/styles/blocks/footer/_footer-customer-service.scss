@@ -1,0 +1,72 @@
+.footer-customer-service{
+    padding-top:95px;
+    border-right:1px solid $gray;
+    padding-bottom:100px;
+    
+    @include breakpoint(small){
+        padding-top:28px;
+        text-align: center;
+        padding-bottom:20px;
+        border-right:none;
+    }
+
+    @include breakpoint(extra-small){
+        h5{
+            display: none;
+        }
+    }
+}
+
+.footer-customer-service__links{
+    padding-top:15px;
+    display: flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+    flex-direction:column;
+    margin-bottom:40px;
+
+    @include breakpoint(small){
+        align-items:center;
+        justify-content:center;
+        padding-top:0;
+        margin-bottom:20px;
+    }
+}
+
+.footer-customer-service__phone{
+    font-size:21px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom:20px;
+    letter-spacing:1px;
+    transition: color 300ms;
+
+    @include breakpoint(small){
+        margin-bottom:15px;
+    }
+
+    &:hover{
+        color: $pink;
+    }
+}
+
+.footer-customer-service__email{
+    font-size:14px;
+    color:#fff;
+    text-decoration: none;
+    transition: color 300ms;
+
+    &:hover{
+        color: $pink;
+    }
+}
+
+.footer-customer-service__top{
+    min-height: 270px;
+    padding-bottom:20px;
+
+    @include breakpoint(small){
+        min-height:0;
+        padding-bottom:0;
+    }
+}

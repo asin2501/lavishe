@@ -1,0 +1,38 @@
+.breadcrumb {
+    padding-top: 15px;
+    margin-bottom: -42px;
+    font-size: 12px;
+
+    @include breakpoint(small){
+        display: none;
+    }
+
+    a {
+        color: #000;
+        transition: color 300ms;
+        &:hover {
+            color: $pink;
+        }
+    }
+    span {
+        color: rgba(#000, 0.5);
+    }
+
+    .breadcrumb__arrow {
+        font-size: 18px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+}
+
+.template-page-contacts {
+    .breadcrumb {
+        a {
+            color: #fff;
+        }
+
+        span {
+            color: rgba(#fff, 0.5);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.contacts-info{
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
+.contacts-info__description{
+    max-width: 600px;
+}
+
+.contacts-info__inner{
+    padding-right:50px;
+    max-width: 100%;
+
+    @include breakpoint(small){
+        padding-right:0;
+    }
+
+    @include breakpoint(extra-small){
+        width:100%;
+    }
+}

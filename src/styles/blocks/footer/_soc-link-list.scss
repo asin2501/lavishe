@@ -1,0 +1,55 @@
+.soc-link-list {
+    display: flex;
+
+    @include breakpoint(small) {
+        justify-content: center;
+    }
+}
+
+.soc-link-list__icon {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    transition: transform 300ms;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+}
+
+.icon-facebook {
+    background-color: #3b5999;
+}
+
+.icon-instagram {
+    background-color: #e4405f;
+}
+
+.icon-pinterest {
+    background-color: #bd081b;
+}
+
+.icon-twitter {
+    background-color: #00aced;
+}
+
+.soc-link-list__item {
+
+    svg {
+        fill: #fff;
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        left: 50%;
+        top: 50%;
+        margin-left: -11px;
+        margin-top: -11px;
+    }
+
+}
+
+.soc-link-list__item + .soc-link-list__item {
+    margin-left: 10px;
+}

@@ -1,0 +1,43 @@
+.qty {
+    display: flex;
+
+}
+
+.qty__minus, .qty__plus {
+    width: 40px;
+    line-height: 40px;
+    height: 40px;
+    border: 1px solid $graySuperLight;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 300ms;
+    font-size:25px;
+    color: $gray;
+    &:hover {
+        background-color: $graySuperLight;
+    }
+}
+
+.qty__minus{
+    line-height:30px;
+    padding-bottom:4px;
+}
+
+.qty__input {
+
+    width: 58px;
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+
+    &:focus {
+        border-color: $graySuperLight;
+    }
+
+    @include breakpoint(mobile){
+        width: 40px;
+    }
+}

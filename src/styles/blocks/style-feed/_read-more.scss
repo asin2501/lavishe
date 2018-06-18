@@ -1,0 +1,22 @@
+.read-more{
+    position: relative;
+    font-size:14px;
+    font-weight:bold;
+    text-transform: uppercase;
+    padding-right:15px;
+    transition: color 300ms;
+
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 3px;
+        right:0;
+        width:8px;
+        height:8px;
+        border-top:2px solid #fff;
+        border-right:2px solid #fff;
+        transition: border-color 300ms;
+        transform: rotateZ(45deg);
+    }
+}

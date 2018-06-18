@@ -1,0 +1,125 @@
+<div class="student-discount-page container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-10">
+            <div class="student-discount-page__border-outer">
+                <div class="student-discount-page__border-inner">
+                    <div class="student-discount-page__container">
+                        <div class="student-form" id="student-form" data-chimp-url="{{ section.settings.mailchimp_url }}&c=?">
+                            {% form 'contact' %}
+                            <div class="student-form__header">
+                                <h2 class="student-form__title">{{ section.settings.title }}</h2>
+                                <p class="student-form__subtitle subtitle">{{ section.settings.subtitle }}</p>
+                            </div>
+                            <div class="row student-form__line">
+                                <div class="col-6">
+                                    <label class="label">{{ 'custom.student_form.first_name' | t }}</label>
+                                    <input type="text" required="required" name="contact[first_name]" class="input input--light input--full">
+                                </div>
+                                <div class="col-6">
+                                    <label class="label">{{ 'custom.student_form.second_name' | t }}</label>
+                                    <input type="text" required="required" name="contact[last_name]" class="input input--light input--full">
+                                </div>
+                            </div>
+                            <div class="student-form__line">
+                                <label class="label">{{ 'custom.student_form.your_primary_email_address' | t }}</label>
+                                <input type="email" required="required" name="contact[email]" placeholder="{{ section.settings.placholder1 }}"
+                                       class="input input--light input--full js-email">
+                            </div>
+                            <div class="student-form__line">
+                                <label class="label">{{ 'custom.student_form.student_email_address' | t }}</label>
+                                <input class="input input--light input--full js-student-email" name="contact[student_email]" placeholder="{{ section.settings.placholder2 }}"
+                                       required="required" type="email">
+                            </div>
+                            <p class="student-form__info">{% include 'round-info-button' %}{{ section.settings.info }}</p>
+                            <div class="years-line">
+                                <label class="years-line__title label">{{ 'custom.student_form.what_year' | t }}</label>
+                                <div class="row years-line__list" id="years_of_end">
+                                    <div class="col-md col-4">
+                                        <div class="years-line__year js-year">2018</div>
+                                    </div>
+                                    <div class="col-md col-4">
+                                        <div class="years-line__year years-line__year--active js-year">2019</div>
+                                    </div>
+                                    <div class="col-md col-4">
+                                        <div class="years-line__year js-year">2020</div>
+                                    </div>
+                                    <div class="col-md col-4">
+                                        <div class="years-line__year js-year">2021</div>
+                                    </div>
+                                    <div class="col-md col-4">
+                                        <div class="years-line__year js-year">2022</div>
+                                    </div>
+                                    <div class="col-md col-4">
+                                        <div class="years-line__year js-year">2023+</div>
+                                    </div>
+                                    <input name="contact[end_year]" type="hidden" class="js-year-input" value="2019">
+                                </div>
+                            </div>
+                            <div class="student-form__agree-line">
+                                <div class="checkbox checkbox--text">
+                                    <input class="checkbox__checkbox" type="checkbox" id="agree-subscribe" checked="checked">
+                                    <label class="checkbox__label" for="agree-subscribe">{{ section.settings.agree_text }}</label>
+                                </div>
+                            </div>
+                            <button class="btn btn--full" type="submit">{{ 'custom.student_form.submit' | t }}</button>
+                            {% if form.posted_successfully? %}
+                                <div class="student-form-success">
+                                    <div class="student-form-success__success"><p>{{ section.settings.message }}</p><button type="button" class="student-form-success__close" id="closesuccess-popup">{% include 'icon-close' %}</button></div>
+                                </div>
+                            {% endif %}
+                            {% endform %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Student Discount Form",
+    "settings":[{
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"Students Get 10% Off"
+    },{
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default":"Complete the form below and we'll send you your unique student discount code - valid until you graduate. Happy shopping!"
+    },{
+        "type": "text",
+        "id": "info",
+        "label": "Info",
+        "default":"We need your student email address to verify you as a student"
+    },{
+        "type": "text",
+        "id": "agree_text",
+        "label": "Agree text",
+        "default":"Sign me up for Lavishe Wear student newsletters to get exclusive student perks and treats"
+    },{
+        "type": "text",
+        "id": "placholder1",
+        "label": "Placholder 1",
+        "default":"example@email.com"
+    },{
+        "type": "text",
+        "id": "placholder2",
+        "label": "Placholder 2",
+        "default":"example@email.edu"
+    },{
+        "type": "text",
+        "id": "mailchimp_url",
+        "label": "Mailchimp Url",
+        "default":"https://beta.us16.list-manage.com/subscribe/post?u=5215892ebe0dfb898b9ff1233&id=4606fdfd3b"
+    },{
+        "type": "text",
+        "id": "message",
+        "label": "After Send Message",
+        "default":"Thank you, the discount coupon was sent to your email address"
+    }]
+}
+{% endschema %}

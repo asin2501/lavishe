@@ -1,0 +1,89 @@
+<section class="featured-products" id="featured-products" data-cat-list="{{ section.settings.cat_list }}" data-collection-url="{{ collections[section.settings.collection].url }}">
+    <div class="container-fluid">
+        <div class="row justify-content-center ">
+            <div class="col-xl-10">
+                <h2 class="featured-products__title">{{ section.settings.title }}</h2>
+                <ul class="featured-products__cat-list">
+                    <li class="featured-products__cat-item" :class="{'featured-products__cat-item--active': currentCat === 'all'}">
+                        <span class="featured-products__cat-title"  @click="slideToCat('all')">All</span>
+                    </li>
+                    <li class="featured-products__cat-item" :class="{'featured-products__cat-item--active': currentCat === cat}" v-for="cat in categoriesList" @click="slideToCat(cat)" v-if="cat.toUpperCase() !== 'ALL'">
+                        <span class="featured-products__cat-title" >{% raw %}{{ cat }}{% endraw %}</span>
+                    </li>
+                </ul>
+                <div class="home-product-slider" ref="slider">
+                    <div class="home-product-slider__slide" data-cat="all">
+                        <div class="product__row">
+                            <div class="product__col"  v-for="product in productData.all">
+                                <div class="product-card">
+                                    <div class="product-card__img" :style="{'background-image': 'url(' + product.thumbnail + ')'}">
+                                        <div class="product-card__sale-label" v-if="product.isSale">Sale</div>
+                                    </div>
+                                    <h5 class="product-card__title">{% raw %}{{ product.title }}{% endraw %}</h5>
+                                    <p class="product-card__prices">
+                                        <span class="product-card__price">{% raw %}{{ product.formatedPrice }}{% endraw %}</span>
+                                        <span class="product-card__price product-card__price--compared" v-if="product.isSale">{% raw %}{{ product.comparePrice }}{% endraw %}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-product-slider__slide" :data-cat="cat" v-for="cat in categoriesList" v-if="cat.toUpperCase() !== 'ALL'">
+                        <div class="product__row">
+                            <div class="product__col"  v-for="product in productData[cat]">
+                                <div class="product-card">
+                                    <div class="product-card__img" :style="{'background-image': 'url(' + product.thumbnail + ')'}">
+                                        <div class="product-card__sale-label" v-if="product.isSale">Sale</div>
+                                    </div>
+                                    <h5 class="product-card__title">{% raw %}{{ product.title }}{% endraw %}</h5>
+                                    <p class="product-card__prices">
+                                        <span class="product-card__price">{% raw %}{{ product.formatedPrice }}{% endraw %}</span>
+                                        <span class="product-card__price product-card__price--compared" v-if="product.isSale">{% raw %}{{ product.comparePrice }}{% endraw %}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-products__btn-row">
+                    <a class="transparent-btn transparent-btn--black" href="{{ collections[section.settings.collection].url }}">{{ section.settings.button_text }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Featured Products",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Section Title",
+            "default": "Women’s Clothing"
+        },{
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+        },{
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "View More"
+        },{
+            "type": "text",
+            "id": "cat_list",
+            "label": "Category List",
+            "default": "Tops,Shirts,Blouses,Bottoms,Skirts,Jeans,Dresses,Outerwear",
+            "info":"List of categories which will be displayed, use \",\" as separator, don`t include \"all\", this Category included by default. If the field is empty, all categories from the collection will be displayed"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Featured Products",
+            "category": "Homepage"
+        }
+    ]
+}
+{% endschema %}

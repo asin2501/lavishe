@@ -1,0 +1,116 @@
+<section class="about">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <h2 class="about__title">{{ section.settings.title }}</h2>
+            </div>
+        </div>
+
+        <div class="row justify-content-center about-line about-line--first">
+            <div class="col-xl-5 col-md-6">
+                <div class="about-line__image-wrapper about-line__image-wrapper--padding-right">
+                    <div class="about-line__image " style="background-image:url({{ section.settings.img_section_1 | img_url: 'master' }});"></div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-md-6">
+                <div class="about-line__text-col  about-line__text-col--padding-left">
+                    <h3 class="about-line__title">{{ section.settings.title_section_1 }}</h3>
+                    <div class="about-line__text">{{ section.settings.text_section_1 }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center about-line about-line--second">
+            <div class="col-xl-5 col-md-6">
+                <div class="about-line__image-wrapper about-line__image-wrapper--padding-left">
+                    <div class="about-line__image" style="background-image:url({{ section.settings.img_section_2 | img_url: 'master' }});"></div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-md-6">
+                <div class="about-line__text-col  about-line__text-col--padding-right">
+                    <h3 class="about-line__title">{{ section.settings.title_section_2 }}</h3>
+                    <div class="about-line__text">{{ section.settings.text_section_2 }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center about-line about-line--third">
+            <div class="col-xl-7 col-lg-8">
+                <div class="about-line__image-wrapper">
+                    <div class="about-line__image about-line__image--slim" style="background-image:url({{ section.settings.img_section_3 | img_url: 'master' }});"></div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-8">
+                <div class="about-line__text-col about-line__text-col--padding-left">
+                    <h3 class="about-line__title">{{ section.settings.title_section_3 }}</h3>
+                    <div class="about-line__text">{{ section.settings.text_section_3 }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "About",
+    "settings":[
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default":"About Us"
+        },
+        {
+            "type": "image_picker",
+            "id": "img_section_1",
+            "label": "First Image"
+        },
+        {
+            "type": "text",
+            "id": "title_section_1",
+            "label": "First Title",
+            "default":"What is Lorem Ipsum?"
+        },
+        {
+            "type": "richtext",
+            "id": "text_section_1",
+            "label": "First Text",
+            "default":"<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p><p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>"
+        },
+        {
+            "type": "image_picker",
+            "id": "img_section_2",
+            "label": "Second Image"
+        },
+        {
+            "type": "text",
+            "id": "title_section_2",
+            "label": "Second Title",
+            "default":"Why do we use it?"
+        },
+        {
+            "type": "richtext",
+            "id": "text_section_2",
+            "label": "Second Text",
+            "default":"<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p><p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.</p>"
+        },
+        {
+            "type": "image_picker",
+            "id": "img_section_3",
+            "label": "Third Image"
+        },
+        {
+            "type": "text",
+            "id": "title_section_3",
+            "label": "Third Title",
+            "default":"Where can I get some?"
+        },
+        {
+            "type": "richtext",
+            "id": "text_section_3",
+            "label": "Third Text",
+            "default":"<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p><p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>"
+        }
+    ]
+}
+{% endschema %}

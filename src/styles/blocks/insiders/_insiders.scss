@@ -1,0 +1,43 @@
+.insiders{
+    margin-top:100px;
+    @include breakpoint(extra-small){
+        margin-top:35px;
+    }
+}
+
+.insiders__title{
+    @include breakpoint(extra-small){
+        text-align: center;
+    }
+}
+
+.insiders__subtitle{
+    color: $grayLight;
+    @include breakpoint(extra-small){
+        text-align: center;
+    }
+}
+
+.insiders__list{
+    margin-top:52px;
+    margin-bottom:100px;
+    @include breakpoint(extra-small){
+        margin-top:35px;
+        margin-bottom:30px;
+    }
+
+}
+
+.insiders__wrapper{
+    width:25%;
+    padding-right:10px;
+    padding-left:10px;
+
+    @media (max-width:1400px) {
+        width:33.33%;
+    }
+
+    @include breakpoint(extra-small){
+        width:50%;
+    }
+}

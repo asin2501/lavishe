@@ -1,0 +1,126 @@
+.section-slider {
+    .slick-dots{
+        position: absolute;
+        right:8.33%;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include breakpoint(medium){
+            right:20px;
+        }
+
+        @include breakpoint(extra-small){
+            display: none!important;
+        }
+        
+        li{
+            padding:7px;
+            opacity: 0.6;
+            transition: opacity 300ms;
+
+            &.slick-active{
+                opacity: 1;
+            }
+
+            button{
+                height:10px;
+                width:10px;
+                background-color: #fff;
+                border-radius:5px;
+                border: none;
+                font-size:0;
+                color: transparent;
+                padding:0;
+                margin:0;
+                display: block;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.section-slider__header {
+    position: relative;
+    padding-top: 36.45%;
+
+    @include breakpoint(medium) {
+        padding-top: 45%;
+    }
+
+    @include breakpoint(small) {
+        @media(orientation: portrait) {
+            padding-top: 71%;
+        }
+    }
+
+
+}
+
+.section-slider__slide {
+
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.section-slider__header-inner {
+    position: absolute;
+    align-items: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+}
+
+.section-slider__title {
+    font-size: 90px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 2px;
+
+    strong {
+        color: #000;
+    }
+
+    @media (max-width: 1400px) {
+        font-size: 65px;
+    }
+
+    @include breakpoint(medium) {
+        font-size: 50px;
+        letter-spacing: normal;
+    }
+
+    @include breakpoint(small-tablet-portrait) {
+        font-size:26px;
+    }
+
+    @include breakpoint(medium) {
+        @media (orientation: landscape) and (max-height:500px) {
+            font-size:26px;
+        }
+    }
+}
+
+.section-slider__sub-title {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 27px;
+
+    @include breakpoint(medium) {
+        margin-top: 15px;
+    }
+
+    @include breakpoint(small) {
+        display: none;
+    }
+}
+
+.section-slider__btn {
+    margin-top: 40px;
+    @include breakpoint(medium) {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,42 @@
+.years-line {
+    margin-bottom: 38px;
+    margin-top: 30px;
+    @include breakpoint(small-tablet-portrait){
+        margin-top:15px;
+        margin-bottom:15px;
+    }
+}
+
+//.years-line__title{
+//    @include breakpoint(small-tablet-portrait){
+//        margin-bottom:0;
+//    }
+//}
+
+.years-line__list {
+    margin-right: -5px;
+    margin-left: -5px;
+    & > * {
+        padding-right: 5px;
+        padding-left: 5px;
+
+        @include breakpoint(extra-small){
+            padding-top:5px;
+            padding-bottom:5px;
+        }
+    }
+}
+
+.years-line__year {
+    box-sizing: border-box;
+    border: 1px solid $graySuperLight;
+    text-align: center;
+    line-height: 38px;
+    transition: background-color 300ms, border-color 300ms;
+    cursor: pointer;
+}
+
+.years-line__year--active, .years-line__year:hover {
+    background-color: $beige;
+    border-color: $beige;
+}

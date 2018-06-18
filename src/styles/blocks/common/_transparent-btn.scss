@@ -1,0 +1,35 @@
+.transparent-btn {
+    height: 40px;
+    padding-right: 35px;
+    padding-left: 35px;
+    font-size: 14px;
+    color: #fff;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 300ms, color 300ms;
+    background-color: transparent;
+    padding-top:0;
+    padding-bottom:0;
+    line-height:40px;
+    text-align: center;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &:hover {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+.transparent-btn--black {
+    border-color: #000;
+    color: #000;
+    &:hover {
+        color: #fff;
+        background-color: #000;
+    }
+}

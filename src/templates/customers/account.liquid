@@ -1,0 +1,61 @@
+<div class="container-fluid account">
+    <div class="row justify-content-center">
+        <div class="col-xl-10 ">
+            <div class="account__head">
+                <h2>{{ 'customer.account.title' | t }}</h2>
+                {{ 'layout.customer.log_out' | t | customer_logout_link }}
+            </div>
+            <h3 class="accoutn__order-history-title">{{ 'customer.orders.title' | t }}</h3>
+        </div>
+        <div class="col-xl-7 col-lg-8">
+            {% paginate customer.orders by 100 %}
+            {% if customer.orders.size != 0 %}
+                <table class="responsive-table order-history-table">
+                    <thead>
+                    <tr>
+                        <th>{{ 'customer.orders.order_number' | t }}</th>
+                        <th>{{ 'customer.orders.date' | t }}</th>
+                        <th>{{ 'customer.orders.payment_status' | t }}</th>
+                        <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+                        <th>{{ 'customer.orders.total' | t }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in customer.orders %}
+                        <tr class="responsive-table-row">
+                            <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+                            <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | date: format: 'month_day_year' }}</td>
+                            <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+                            <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+                            <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>{{ 'customer.orders.none' | t }}</p>
+            {% endif %}
+
+            {% if paginate.pages > 1 %}
+                {% include 'pagination' %}
+            {% endif %}
+
+            {% endpaginate %}
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="card-wrapper card-wrapper--alt-color">
+                <div class="card-wrapper__header">
+                    <h5>{{ 'customer.account.details' | t }}</h5>
+                </div>
+                <div class="card-wrapper__body">
+                    <div class="card-wrapper__body-inner">
+                        {{ customer.default_address | format_address }}
+                    </div>
+                    <div class="card-wrapper__body-inner">
+                        <a href="/account/addresses" class="btn btn--full">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

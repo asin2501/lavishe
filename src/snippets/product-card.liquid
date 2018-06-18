@@ -1,0 +1,18 @@
+<div class="product-card">
+    <div class="product-card__img" style="background-image:url({{ _product.featured_image | img_url:'400x' }})">
+        {% if _product.compare_at_price_max > _product.price %}
+        <div class="product-card__sale-label">Sale</div>
+        {% endif %}
+    </div>
+    <h5 class="product-card__title">{{ _product.title }}</h5>
+    <p class="product-card__prices">
+        <span class="product-card__price">{{ _product.price | money }}</span>
+        {% if _product.compare_at_price_max > _product.price %}
+            <span data-compare-price class="product-card__price product-card__price--compared">
+                            {% if _product.compare_at_price > _product.price %}
+                                {{ _product.compare_at_price | money }}
+                            {% endif %}
+                        </span>
+        {% endif %}
+    </p>
+</div>

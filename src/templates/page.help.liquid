@@ -1,0 +1,21 @@
+<section class="faq" id="faq">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <h2 class="faq__title">{{ page.title }}</h2>
+                <div class="faq__row">
+                    <div class="faq__sidebar">
+                        <ul class="faq-anchors" id="faq-anchors"></ul>
+                    </div>
+                    <div class="faq__content">
+                        {% section 'FAQ_block1' %}
+                        {% section 'FAQ_block2' %}
+                        {% section 'FAQ_block3' %}
+                        {% section 'FAQ_block4' %}
+                        {% section 'FAQ_block5' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

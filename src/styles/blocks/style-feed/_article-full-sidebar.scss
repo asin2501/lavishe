@@ -1,0 +1,11 @@
+.article-full-sidebar{
+    padding-top:70px;
+    
+    @include breakpoint(small){
+        display: none;
+    }
+}
+
+.article-full-sidebar__title{
+    margin-bottom:18px;
+}

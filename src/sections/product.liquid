@@ -1,0 +1,201 @@
+<meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+<meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
+<meta itemprop="brand" content="{{ product.vendor }}">
+<meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
+<meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+
+<div class="product container-fluid" data-section-id="product" data-section-type="product">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-7 col-md-8 col-sm-12 product__img">
+            <ul class="thumbnails">
+                {% for img in product.images %}
+                    <li class="thumbnails__item {% if forloop.index == 1 %}thumbnails__item--active{% endif %}">
+                        <div class="thumbnails__img" style="background-image:url({{ img | img_url:'200x' }});"></div>
+                    </li>
+                {% endfor %}
+
+                {% assign video_url = product.metafields.sf_product_info.video %}
+                {% if video_url %}
+                    <li class="thumbnails__item">
+                        <a class="thumbnails__video" id="popup-iframe" href="{{ video_url }}">
+                            <div class="thumbnails__video-inner">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAMAAABWBG9SAAAAV1BMVEUAAAD/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9T/u9TXzesEAAAAHHRSTlMACPjxHxLq4tnSvZhyWUtBNS2ljMewffemi2Vkg5RLlwAAAH5JREFUKM+F0tkOhCAQRNFCZVZn3Pf6/+9UEnmpJoHHk5BcmkbvYQ+fTQLJwVks+O4Mti8WtSLcl/xUgsD/wfKnCD+RvRcE9jLECaIayc0Jws0hThC44pZa8Y4TjHEpzF+PUzBJNn6Q+CM80w5k9bnRxZD8d8QQ+8X5ZUiuzQkNxgzr2hqWyAAAAABJRU5ErkJggg=="
+                                     alt="">
+                                <span>{{ 'custom.product_page.catwalk_video' | t }}</span>
+                            </div>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+            <div class="product-slider" id="product-slider">
+                {% for img in product.images %}
+                    <div class="product-slider__slide">
+                        <div class="product-slider__inner" style="background-image:url({{ img | img_url:'master' }});"></div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-5 col-md-8 col-sm-12">
+            <div class="product-info">
+                <h2 class="product-info__title">{{ product.title }}</h2>
+
+                <p class="product-info__prices">
+                    <span data-product-price class="product-info__price">{{ current_variant.price | money }}</span>
+                    {% if product.compare_at_price_max > product.price %}
+                        <span data-compare-price class="product-info__price product-info__price--compared">
+                            {% if current_variant.compare_at_price > current_variant.price %}
+                                {{ current_variant.compare_at_price | money }}
+                            {% endif %}
+                        </span>
+                    {% endif %}
+                </p>
+
+                <form action="/cart/add" method="post" enctype="multipart/form-data">
+                    <select name="id" class="no-js hidden" data-product-select>
+                        {% for variant in product.variants %}
+                            <option
+                                    {% if variant == current_variant %}selected="selected"{% endif %}
+                                    {% unless variant.available %}disabled="disabled"{% endunless %}
+                                    value="{{ variant.id }}">
+                                {{ variant.title }}
+                            </option>
+                        {% endfor %}
+                    </select>
+
+                    <div class="product-info__controls">
+                        {% unless product.has_only_default_variant %}
+                        {% for option in product.options_with_values %}
+                            {% assign option_handle = option.name | handle %}
+                            {% if option_handle == 'size' %}
+                                <div class="product-info__size-col">
+                                    <a href="#" class="product-info__link">{{ 'custom.product_page.size_guide' | t }}</a>
+                                    <div class="selector-wrapper js">
+                                        <label class="label" for="SingleOptionSelector-{{ forloop.index0 }}">
+                                            {{ option.name }}
+                                        </label>
+                                        <select class="input input--full input--light"
+                                                id="SingleOptionSelector-{{ forloop.index0 }}"
+                                                data-single-option-selector
+                                                data-index="option{{ option.position }}">
+                                            {% for value in option.values %}
+                                                <option
+                                                        value="{{ value | escape }}"
+                                                        {% if option.selected_value == value %}selected="selected"{% endif %}>
+                                                    {{ value }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% endunless %}
+                        <div class="product-info__qty-col">
+                            <label  class="label" for="Quantity">{{ 'products.product.quantity' | t }}</label>
+                            <div class="qty js-qty">
+                                <button type="button" class="qty__minus js-minus">&ndash;</button>
+                                <input type="text" id="Quantity" class="qty__input input js-inp js-digin-input" name="quantity" value="1" min="1">
+                                <button type="button" class="qty__plus js-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                            type="submit"
+                            name="add"
+                            class="btn btn--full btn--black"
+                            data-add-to-cart
+                            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                      <span data-add-to-cart-text>
+                        {% if current_variant.available %}
+                            {{ 'products.product.add_to_cart' | t }}
+                        {% else %}
+                            {{ 'products.product.sold_out' | t }}
+                        {% endif %}
+                      </span>
+                    </button>
+                </form>
+
+                <div class="product-info__description">
+                    <h5 class="product-info__description-title">!!Product Info {{ 'custom.product_page.product_info' | t }}</h5>
+                    {{ product.description }}
+                </div>
+
+                <div class="product-info__share">
+                    {% if section.settings.show_share_buttons %}
+                        {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% unless product == empty %}
+<script type="application/json" data-product-json>
+
+</script>
+{% endunless %}
+
+<div class="container-fluid also-like">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="also-like__slider-wrapper">
+                <h3 class="also-like__title">You Might Also Like</h3>
+                {% assign product_list = '' %}
+                {% for i in (1..10) %}
+                    {% assign product_metafield = 'prod' | append: i %}
+                    {% if product.metafields.sf_also_like[product_metafield] %}
+                        {% assign product_list = product_list | append: ',' | append: product.metafields.sf_also_like[product_metafield] %}
+                    {% endif %}
+                {% endfor %}
+                {% assign product_list = product_list | remove_first: "," %}
+                {% assign product_handels = product_list | split:',' %}
+                {% assign length = product_handels | size %}
+
+                {% assign length = product_handels | size %}
+                {% assign rest = 10 | minus: length %}
+
+                {% if rest>0 %}
+                    {% assign product_collection = product.collections | first %}
+                    {% for prod in product_collection.products %}
+                        {% unless product_list contains prod.handle %}
+                        {% if product.handle != prod.handle %}
+                            {% assign product_list = product_list | append: ',' | append: prod.handle %}
+                        {% endif %}
+                        {% endunless %}
+                    {% endfor %}
+                {% endif %}
+
+                {% assign product_handels = product_list | split:',' %}
+
+
+                <div class="also-like__slider" id="also-like-slider">
+                    {% for product_handel in product_handels %}
+                        {% if all_products[product_handel] %}
+                            <div class="also-like__slide">
+                                {% include 'product-card', _product: all_products[product_handel] %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Product",
+    "settings":[{
+        "type": "checkbox",
+        "id": "show_share_buttons",
+        "label": "Show Share Buttons",
+        "default":true
+    }]
+}
+{% endschema %}

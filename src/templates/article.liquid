@@ -1,0 +1,85 @@
+<div class="article-full">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="article-full__banner" style="background-image:url({{ article.image | img_url:'master' }});"></div>
+            </div>
+            <div class="col-xl-7 col-lg-9 article-full__content">
+                <div class="article-full__container">
+                    <h2 class="article-full__title">{{ article.title }}</h2>
+                    <div class="article-full__undertitle">
+                        <div class="article-full__date">{{ article.published_at | date: "%d %B %Y" }}</div>
+                        {% if settings.social_sharing_blog %}
+                            {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+                        {% endif %}
+                    </div>
+
+                    {% assign text = article.metafields.sf_article_body.article_text_1 %}
+                    {% if text %}
+                        <div class="article-full__text">
+                            {{ text }}
+                        </div>
+                    {% endif %}
+
+                </div>
+                <div class="article-full__two-img row">
+                    {% assign my_image1 = article.metafields.sf_article_body.article_img_1 %}
+                    {% assign my_image2 = article.metafields.sf_article_body.article_img_2 %}
+
+                    <div class="col-12 col-sm-6">
+                        <div class="article-full__small-img" style="background-image:url({{ my_image1 }});"></div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="article-full__small-img" style="background-image:url({{ my_image2 }});"></div>
+                    </div>
+                </div>
+
+                <div class="article-full__container">
+                    {% assign text = article.metafields.sf_article_body.article_text_2 %}
+                    {% if text %}
+                        <div class="article-full__text">
+                            {{ text }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="article-full__one-img">
+                    {% assign my_image = article.metafields.sf_article_body.article_img_3 %}
+                    {% if my_image %}
+                        <img src="{{ my_image }}">
+                    {% endif %}
+                </div>
+
+                <div class="article-full__container">
+                    {% assign text = article.metafields.sf_article_body.article_text_3 %}
+                    {% if text %}
+                        <div class="article-full__text">
+                            {{ text }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="article-full__container">
+                    <div class="article-full__footer">
+                        <a href="{{ blog.previous_article }}" class="article-full__pag-link article-full__pag-link--prev">Prev<span class="hide-on-mob"> post</span></a>
+                        <div class="share-buttons">
+                            {% if settings.social_sharing_blog %}
+                                {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+                            {% endif %}
+                        </div>
+                        <a href="{{ blog.next_article }}" class="article-full__pag-link article-full__pag-link--next">Next<span class="hide-on-mob"> post</span> </a>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-xl-2 col-lg-3 offset-xl-1 article-full-sidebar">
+                <h3 class="article-full-sidebar__title">Recent Posts</h3>
+                {% for _article in blog.articles limit:4 %}
+                    {% if _article.id != article.id %}
+                        {% include 'resent-news', _article:_article %}
+                    {% endif %}
+                {% endfor %}
+                <a href="{{ blog.url }}" class="transparent-btn transparent-btn--black article-full-sidebar__btn">View All</a>
+            </aside>
+        </div>
+    </div>
+</div>

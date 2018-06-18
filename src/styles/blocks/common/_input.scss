@@ -1,0 +1,42 @@
+.input, textarea{
+    background-color: #fff;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:20px;
+    padding-right:10px;
+    border: 1px solid $graySuperLight;
+    transition: border-color 300ms;
+    width:100%;
+
+    @include placeholder{
+        opacity: 1;
+        color: $grayLight;
+    }
+
+    &:focus{
+        border-color: $gray;
+    }
+
+    &.input--full{
+        width:100%;
+    }
+
+    &.input--error{
+        border-color: $pink!important;
+    }
+}
+
+textarea{
+    width:100%;
+    resize: none;
+    height:130px;
+    font-family:$font;
+    display: block;
+    &:focus{
+        border-color: $gray;
+    }
+}
+
+select.input{
+    height:40px;
+}

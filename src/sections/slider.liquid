@@ -1,0 +1,117 @@
+<section class="section-slider js-banner-slider"
+         data-autoplay="{{ section.settings.autoplay }}"
+         data-animation-type="{{ section.settings.animation_type }}"
+         data-anim-speed="{{ section.settings.anim_speed }}"
+         data-autoplay-speed="{{ section.settings.autoplay_speed }}">
+    {% for block in section.blocks %}
+        <div class="section-slider__slide" style="background-image:url({{ block.settings.image | img_url: '1920x' }});">
+            <div class="section-slider__header">
+                <div class="section-slider__header-inner">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-10 offset-xl-1">
+                                <h2 class="section-slider__title">
+                                    {{ block.settings.line1 }}
+                                    {{ block.settings.line2 }}
+                                    {{ block.settings.line3 }}
+                                </h2>
+                                <p class="section-slider__sub-title">{{ block.settings.subtitle }}</p>
+                                <a href="{{ block.settings.btn_url }}" class="transparent-btn section-slider__btn">{{ block.settings.btn_text }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+
+{% schema %}
+{
+    "name": "Slider Banner",
+    "settings": [{
+        "type":      "checkbox",
+        "id":        "autoplay",
+        "label":     "Autoplay",
+        "default":   false
+    },{
+        "type":      "select",
+        "id":        "animation_type",
+        "label":     "Animation Type",
+        "options": [
+            {
+                "value": "fade",
+                "label": "Fade"
+            },
+            {
+                "value": "slide",
+                "label": "Slide"
+            }
+        ],
+        "default":   "slide"
+    },{
+        "type":   "range",
+        "id":     "autoplay_speed",
+        "min":       1,
+        "max":       10,
+        "step":      1,
+        "unit":      "sec",
+        "label":     "Autoplay Speed",
+        "default":   5
+    },{
+        "type":   "range",
+        "id":     "anim_speed",
+        "min":       0.2,
+        "max":       5,
+        "step":      0.2,
+        "unit":      "sec",
+        "label":     "Animation Speed",
+        "default":   0.6
+    }],
+    "blocks":[{
+        "type":"slide",
+        "name":"slide",
+        "settings": [{
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },{
+            "type": "richtext",
+            "id": "line1",
+            "label": "Text Line 1",
+            "default":"<p>Let The</p>"
+        },{
+            "type": "richtext",
+            "id": "line2",
+            "label": "Text Line 2",
+            "default":"<p>Easter Treats</p>"
+        },{
+            "type": "richtext",
+            "id": "line3",
+            "label": "Text Line 3",
+            "default":"<p>Begin</p>"
+        },{
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default":"Take off 20% sitewide using code"
+        },{
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button URL"
+        },{
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text",
+            "default": "Link to Collection"
+        }
+        ]
+    }],
+    "presets": [
+        {
+            "name": "Banner Slider",
+            "category": "Homepage"
+        }
+    ]
+}
+{% endschema %}

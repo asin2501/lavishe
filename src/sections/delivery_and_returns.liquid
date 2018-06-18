@@ -1,0 +1,180 @@
+<section class="delivery-returns" id="delivery-returns">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 delivery-returns__header">
+                <h2 class="delivery-returns__title">{{ section.settings.title }}</h2>
+                <p class="delivery-returns__subtitle subtitle">{{ section.settings.subtitle }}</p>
+            </div>
+            <div class="col-12">
+            </div>
+            <div class="col-xl-2 col-lg-4 delivery-returns__sidebar">
+                <ul class="delivery-returns-tabs">
+                    <li class="delivery-returns-tabs__item delivery-returns-tabs__item--active js-tab-btn" data-tab="#delivery-tab">
+                        {{ section.settings.tab1 }}
+                    </li>
+                    <li class="delivery-returns-tabs__item  js-tab-btn"  data-tab="#returns-tab">
+                        {{ section.settings.tab2 }}
+                    </li>
+                </ul>
+                <a class="delivery-returns__faq-label" href="{{ section.settings.link_url }}">
+                    {% include 'round-info-button' %}
+                    {{ section.settings.faq-text }}
+                </a>
+            </div>
+            <div class="col-xl-8 col-lg-8 delivery-returns__content">
+                <ul  id="delivery-tab" class="js-tab-panel">
+                    {% for block in section.blocks %}
+                        {% if block.type == 'delivery-item' %}
+                            <li class="delivery-item">
+                                {% if block.settings.img %}
+                                    <img src="{{ block.settings.img | img_url:'master' }}" alt="" class="delivery-item__img">
+                                {% else %}
+                                    <img src="{{ 'box.png' | asset_img_url:'master' }}" alt="" class="delivery-item__img">
+                                {% endif %}
+                                <div class="delivery-item__info">
+                                    <h3 class="delivery-item__title">{{ block.settings.title }}</h3>
+                                    <div class="delivery-item__list">{{ block.settings.list }}</div>
+                                    <div class="delivery-item__note">{{ block.settings.note }}</div>
+                                </div>
+                                <div class="delivery-item__right">
+                                    <span class="delivery-item__price">{{ block.settings.price }}</span>
+                                    <span class="delivery-item__conditions">{{ block.settings.conditions }}</span>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul id="returns-tab" class="js-tab-panel" style="display: none">
+                    {% for block in section.blocks %}
+                        {% if block.type == 'returns-item' %}
+                            <li class="delivery-item">
+                                {% if block.settings.img %}
+                                    <img src="{{ block.settings.img | img_url:'master' }}" alt="" class="delivery-item__img">
+                                {% else %}
+                                    <img src="{{ 'delivery-and-returns-logo-01.png' | asset_img_url:'master' }}" alt="" class="delivery-item__img">
+                                {% endif %}
+                                <div class="delivery-item__info">
+                                    <h3 class="delivery-item__title">{{ block.settings.title }}</h3>
+                                    <div class="delivery-item__list">{{ block.settings.list }}</div>
+                                </div>
+                                <div class="delivery-item__right">
+                                    <span class="delivery-item__price">{{ block.settings.price }}</span>
+                                    <a href="{{ block.settings.link_url }}" class="delivery-item__link">{{ block.settings.link_text }}</a>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Delivery & Returns",
+    "settings":[{
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default":"Delivery & Returns"
+        },{
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "See below for information about the delivery & returns options in  your country."
+        },{
+            "type": "text",
+            "id": "tab1",
+            "label": "Tab 1",
+            "default": "Delivery"
+        },{
+            "type": "text",
+            "id": "tab2",
+            "label": "Tab 2",
+            "default": "Returns"
+        },{
+            "type": "html",
+            "id": "faq-text",
+            "label": "FAQ text",
+            "default":"<span>Need More Information?</span><span>See our FAQ</span>"
+        },{
+            "type": "url",
+            "id": "link_url",
+            "label": "FAQ url"
+        }
+    ],
+    "blocks":[{
+        "type":"delivery-item",
+        "name":"Delivery Item",
+        "settings":[{
+            "type": "image_picker",
+            "id": "img",
+            "label": "Image"
+        },{
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default":"Standard Delivery"
+        },
+        {
+            "type": "text",
+            "id": "note",
+            "label": "Note",
+            "default":"Note: Subject to placing your order before specific cut-off times. Details available in checkout."
+        },
+        {
+            "type": "html",
+            "id": "list",
+            "label": "List",
+            "default":"<ul><li>Delivered on or before Friday, 20 April 2018</li><li>Delivery is Monday to Sunday</li></ul>"
+        },
+        {
+            "type": "text",
+            "id": "price",
+            "label": "Price",
+            "default":"$10.00"
+        },{
+            "type": "text",
+            "id": "conditions",
+            "label": "Conditions",
+            "default":"Free– spend over $25.00"
+        }]
+    },{
+        "type":"returns-item",
+        "name":"Returns Item",
+        "settings":[{
+                "type": "image_picker",
+                "id": "img",
+                "label": "Image"
+            },{
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default":"InPost 24/7 Lockers"
+            },
+            {
+                "type": "html",
+                "id": "list",
+                "label": "List",
+                "default":"<ul><li>Return through your nearest InPost Locker in over 1,100 locations</li><li>Open 7 days a week 24/7</li><li>You can print a label from the carrier website by clicking the create return link</li><li>Your return will be processed in approximately 7 working days</li></ul>"
+            },
+            {
+                "type": "text",
+                "id": "price",
+                "label": "Price",
+                "default":"Free"
+            },{
+                "type": "text",
+                "id": "link_text",
+                "label": "Link text",
+                "default":"Create Return"
+            },{
+                "type": "url",
+                "id": "link_url",
+                "label": "Link URL"
+            }]
+        }]
+}
+{% endschema %}

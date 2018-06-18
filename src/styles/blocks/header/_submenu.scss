@@ -1,0 +1,48 @@
+.submenu-wrapper{
+    position: relative;
+    background-color: $gray;
+    overflow: hidden;
+
+    &.submenu-wrapper__pushed{
+        .submenu-wrapper__inner{
+            transform: translateX(-50%);
+        }
+    }
+
+    @include breakpoint(medium){
+        display: none;
+    }
+}
+
+.submenu-wrapper__inner{
+    display: flex;
+    width:200%;
+    transition: transform 400ms ease-out;
+}
+
+.submenu{
+    display: flex;
+    justify-content:center;
+    width:50%;
+    text-align: center;
+    padding-top:6px;
+    padding-bottom:10px;
+
+}
+
+.submenu__item{
+    margin-right:11px;
+    margin-left:11px;
+}
+
+.submenu__link{
+    display: inline-block;
+    padding:10px;
+    color: $grayLight;
+    transition: color 300ms;
+
+
+    &:hover{
+        color: #fff;
+    }
+}

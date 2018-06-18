@@ -1,0 +1,114 @@
+.featured-collections {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @include breakpoint(extra-small){
+        padding-top:0;
+    padding-bottom:10px;
+        overflow: hidden;
+        //padding-bottom:0;
+        .container-fluid{
+            padding-right:0;
+            padding-left:0;
+        }
+    }
+
+}
+
+.featured-collection {
+    display: block;
+    height: 540px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+    + .featured-collection {
+        margin-top: 20px;
+
+        @include breakpoint(medium){
+            margin-left: 20px;
+        }
+
+        @include breakpoint(extra-small){
+            margin-left:0;
+        }
+
+        @include breakpoint(mobile-landscape){
+            margin-top:10px;
+        }
+    }
+
+    @include breakpoint(medium){
+        height:340px;
+        margin-top:20px;
+
+    }
+
+    @include breakpoint(small){
+        height:220px;
+    }
+
+    @include breakpoint(extra-small){
+        height:170px;
+    }
+        @include breakpoint(mobile-landscape){
+            margin-top:10px;
+        }
+}
+
+.featured-collection--half {
+    height: 260px;
+
+    @include breakpoint(medium){
+        height:340px;
+    }
+
+    @include breakpoint(small){
+        height:220px;
+    }
+
+    @include breakpoint(extra-small){
+        height:170px;
+    }
+}
+
+.featured-collection__inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 350ms ease-in;
+    display: flex;
+    align-items:center;
+
+    .featured-collection:hover & {
+        background-color: rgba(#000, 0.3);
+    }
+}
+
+.featured-collection__title{
+    width:100%;
+    color: #fff;
+    font-size:48px;
+    text-align: center;
+
+    @include breakpoint(small){
+        font-size:28px;
+    }
+
+    @include breakpoint(mobile-landscape){
+        font-size:20px;
+    }
+}
+
+.featured-collections__col2{
+    @include breakpoint(medium){
+        display: flex;
+    }
+
+    @include breakpoint(extra-small){
+        display: block;
+    }
+}

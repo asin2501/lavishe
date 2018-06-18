@@ -1,0 +1,72 @@
+<section class="insiders">
+    <div class="container-fluid">
+        <div class="row justify-content-center ">
+            <div class="col-xl-10">
+                <h2 class="insiders__title">{{ section.settings.title }}</h2>
+                <p class="insiders__subtitle">{{ section.settings.subtitle }}</p>
+
+                <div class="row insiders__list">
+                    {% for insider in section.blocks %}
+                    <div class="insiders__wrapper">
+                        <a class="insider" href="{{ insider.settings.link }}">
+                            <div class="insider__img" style="background-image: url({{ insider.settings.image | img_url:'600x' }})">
+                                {% if insider.settings.hover_image %}
+                                    <div class="insider__inner-img" style="background-image: url({{ insider.settings.hover_image  | img_url:'600x' }})"></div>
+                                {% endif %}
+                            </div>
+                            <div class="insider__info">
+                                <h4 class="insider__name">{{ insider.settings.name }}</h4>
+                                <p class="insider__description">{{ insider.settings.description }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Insiders",
+    "settings":[{
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"Meet the Team"
+    },{
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default":"Follow your favourite Insider and shop their #LWs straight from Instagram."
+    }],
+    "blocks":[{
+        "type":"insider",
+        "name":"Insider",
+        "settings":[{
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },{
+            "type": "image_picker",
+            "id": "hover_image",
+            "label": "Hover Image"
+        },{
+            "type": "text",
+            "id": "name",
+            "label": "Name",
+            "default":"@SOME_NAME"
+        },{
+            "type": "text",
+            "id": "description",
+            "label": "Description",
+            "default":"Some description"
+        },{
+            "type": "url",
+            "id": "link",
+            "label": "Link to Collection"
+        }]
+    }]
+}
+{% endschema %}

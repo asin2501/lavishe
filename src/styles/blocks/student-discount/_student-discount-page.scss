@@ -1,0 +1,72 @@
+.student-discount-page{
+    padding-top:120px;
+    padding-bottom:120px;
+
+    @include breakpoint(small){
+        padding-top:40px;
+        padding-bottom:40px;
+    }
+
+    @include breakpoint(small-tablet-portrait){
+        padding-right:0;
+        padding-left:0;
+        overflow: hidden;
+    }
+
+}
+
+.student-discount-page__border-outer{
+    max-width: 910px;
+    margin:0 auto;
+    padding:10px;
+    background-color: $ribbon-color;
+    background-image: url('./border-bg.png');
+    background-size:cover;
+    background-position: 50% 50%;
+    @include breakpoint(small-tablet-portrait){
+        padding-right:0;
+        padding-left:0;
+    }
+}
+
+.student-discount-page__border-inner{
+    background-color: #fff;
+    padding-top:113px;
+    padding-bottom:145px;
+    padding-left:50px;
+    padding-right:50px;
+
+    @include breakpoint(small){
+        padding-top:40px;
+        padding-bottom:40px;
+    }
+
+    @include breakpoint(small-tablet-portrait){
+        padding-bottom:20px;
+        padding-top:20px;
+        padding-right:20px;
+        padding-left:20px;
+    }
+
+}
+
+.student-discount-page__container{
+    max-width: 600px;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.student-form__title{
+    text-align: center;
+
+    @include breakpoint(small-tablet-portrait){
+        margin-bottom:10px;
+    }
+}
+
+.student-form__subtitle{
+    max-width: 500px;
+    margin-right:auto;
+    margin-left:auto;
+    text-align: center;
+}

@@ -1,0 +1,10 @@
+.faq-section__title{
+    margin-bottom:20px;
+
+    @include breakpoint(extra-small){
+        margin-bottom:10px;
+        font-size:18px;
+        padding-left:20px;
+        padding-right:20px;
+    }
+}
